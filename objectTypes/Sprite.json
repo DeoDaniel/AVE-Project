@@ -6,9 +6,9 @@
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 954426080303759
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 884578147853366
 		}
 	],
 	"effectTypes": [],

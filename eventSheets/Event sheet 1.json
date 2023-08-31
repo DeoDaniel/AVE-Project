@@ -2,6 +2,16 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Picked",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 708431422195591
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -14,21 +24,11 @@
 				{
 					"id": "rotate-toward-position",
 					"objectClass": "Player",
-					"sid": 418531730918158,
+					"sid": 843110111761206,
 					"parameters": {
-						"degrees": "15",
+						"degrees": "10",
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
-					}
-				},
-				{
-					"id": "rotate-toward-position",
-					"objectClass": "Sprite",
-					"sid": 920213761439987,
-					"parameters": {
-						"degrees": "5",
-						"x": "Player.X",
-						"y": "Player.Y"
 					}
 				}
 			],
@@ -115,18 +115,24 @@
 			],
 			"actions": [
 				{
+					"id": "stop",
+					"objectClass": "Sprite",
+					"sid": 905176065546985,
+					"behaviorType": "Pathfinding"
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 469735321433354,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"set": "disabled"
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "Player",
 					"sid": 678334849817707
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Sprite",
-					"sid": 840563920442765,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"speed": "0"
-					}
 				}
 			],
 			"sid": 473587202985510
@@ -276,6 +282,296 @@
 				}
 			],
 			"sid": 704364792941910
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 970837593109411,
+					"parameters": {
+						"key": 16
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 824233648731473,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "2500"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player",
+					"sid": 625989960783932,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"speed": "2500"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 462899953065578,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 846423889069397,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "600"
+					}
+				}
+			],
+			"sid": 712539185027566
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 442648340975747,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 399478281085760,
+					"parameters": {
+						"object": "PickArea"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "toggle-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 306682580640698,
+					"parameters": {
+						"variable": "Picked"
+					}
+				}
+			],
+			"sid": 742275458273126
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 591828745093351
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 588249800086818,
+					"parameters": {
+						"variable": "Picked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Interactable",
+					"sid": 841935758712234,
+					"parameters": {
+						"angle": "Player.Angle"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Interactable",
+					"sid": 847889622435746,
+					"parameters": {
+						"object": "Player",
+						"image-point-optional": "1"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Interactable",
+					"sid": 582422172679569,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 870376471783745,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "PickArea",
+					"sid": 759442187258579,
+					"parameters": {
+						"object": "Interactable",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 455093224629802
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-path-found",
+					"objectClass": "Sprite",
+					"sid": 683864781703350,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "move-along-path",
+					"objectClass": "Sprite",
+					"sid": 108838578264836,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"sid": 489435827346994
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "Sprite",
+					"sid": 939480394421165,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "find-path",
+					"objectClass": "Sprite",
+					"sid": 613490069811645,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 629442582391087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 203785657392218
+				}
+			],
+			"actions": [
+				{
+					"id": "find-path",
+					"objectClass": "Sprite",
+					"sid": 613490069811645,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 985517512227839
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 252881360836080,
+					"parameters": {
+						"object": "PickArea"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 953089364952030,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "Interactable",
+					"sid": 627197793588737,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 952199924878955,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 857439411610218
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 517514150134508,
+					"parameters": {
+						"object": "PickArea"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "Interactable",
+					"sid": 707835043315554,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 952199924878955,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 255884476812798
 		}
 	],
 	"sid": 558909492298727

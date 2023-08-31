@@ -40,6 +40,20 @@
 			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "jylnef8x06j",
@@ -49,7 +63,9 @@
 			"Mouse",
 			"Player",
 			"bullet",
-			"Sprite"
+			"Sprite",
+			"Interactable",
+			"PickArea"
 		],
 		"subfolders": []
 	},
