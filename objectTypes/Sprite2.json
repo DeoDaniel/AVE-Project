@@ -1,26 +1,10 @@
 {
-	"name": "Sprite",
+	"name": "Sprite2",
 	"plugin-id": "Sprite",
-	"sid": 344418037308978,
+	"sid": 159187614520690,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pathfinding",
-			"name": "Pathfinding",
-			"sid": 884578147853366
-		},
-		{
-			"behaviorId": "bound",
-			"name": "BoundToLayout",
-			"sid": 383370018101239
-		},
-		{
-			"behaviorId": "shadowcaster",
-			"name": "ShadowCaster",
-			"sid": 636752984284061
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -34,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2479368,
+						"imageSpriteId": 4043438,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 666752922903688,
+				"sid": 919302776481585,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

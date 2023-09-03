@@ -1,27 +1,16 @@
 {
-	"name": "Sprite",
+	"name": "Sprite3",
 	"plugin-id": "Sprite",
-	"sid": 344418037308978,
+	"sid": 692055440979762,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
+	"behaviorTypes": [],
+	"effectTypes": [
 		{
-			"behaviorId": "Pathfinding",
-			"name": "Pathfinding",
-			"sid": 884578147853366
-		},
-		{
-			"behaviorId": "bound",
-			"name": "BoundToLayout",
-			"sid": 383370018101239
-		},
-		{
-			"behaviorId": "shadowcaster",
-			"name": "ShadowCaster",
-			"sid": 636752984284061
+			"effectId": "radialblur",
+			"name": "RadialBlur"
 		}
 	],
-	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
@@ -34,12 +23,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2479368,
+						"imageSpriteId": 6209565,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 666752922903688,
+				"sid": 478534375657379,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

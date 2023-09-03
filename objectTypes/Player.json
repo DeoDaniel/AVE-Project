@@ -9,6 +9,21 @@
 			"behaviorId": "EightDir",
 			"name": "8Direction",
 			"sid": 266410544150608
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 374407450560219
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 104624594051416
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 852770077100870
 		}
 	],
 	"effectTypes": [],

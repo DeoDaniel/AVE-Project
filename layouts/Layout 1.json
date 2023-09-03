@@ -7,6 +7,75 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "ShadowLight",
+					"properties": {
+						"light-height": 1000,
+						"light-radius": 0,
+						"shadow-color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"cast-from": "all",
+						"tag": "",
+						"live-preview": false
+					},
+					"uid": 10,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"SoftLight": {
+							"isEnabled": true,
+							"parameters": {}
+						}
+					},
+					"world": {
+						"x": 989,
+						"y": 493,
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.25
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 9,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 621,
+						"y": 501,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "PickArea",
 					"properties": {
 						"initially-visible": true,
@@ -29,7 +98,7 @@
 							1,
 							1,
 							1,
-							1
+							0
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -49,7 +118,7 @@
 					"behaviors": {
 						"Pathfinding": {
 							"properties": {
-								"cell-size": 30,
+								"cell-size": 20,
 								"cell-border": -1,
 								"obstacles": "solids",
 								"max-speed": 600,
@@ -58,7 +127,19 @@
 								"rotate-speed": 400,
 								"rotate-object": true,
 								"diagonals": true,
-								"direct-movement": "anywhere-along-path",
+								"direct-movement": "to-destination",
+								"enabled": true
+							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
+						},
+						"ShadowCaster": {
+							"properties": {
+								"height": 100,
+								"tag": "",
 								"enabled": true
 							}
 						}
@@ -94,7 +175,7 @@
 					"behaviors": {
 						"Pathfinding": {
 							"properties": {
-								"cell-size": 30,
+								"cell-size": 20,
 								"cell-border": -1,
 								"obstacles": "solids",
 								"max-speed": 600,
@@ -103,7 +184,19 @@
 								"rotate-speed": 400,
 								"rotate-object": true,
 								"diagonals": true,
-								"direct-movement": "anywhere-along-path",
+								"direct-movement": "to-destination",
+								"enabled": true
+							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
+						},
+						"ShadowCaster": {
+							"properties": {
+								"height": 100,
+								"tag": "",
 								"enabled": true
 							}
 						}
@@ -142,6 +235,13 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"ShadowCaster": {
+							"properties": {
+								"height": 100,
+								"tag": "",
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -159,6 +259,45 @@
 						],
 						"angle": 0,
 						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite3",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 11,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"RadialBlur": {
+							"isEnabled": true,
+							"parameters": {
+								"radius": 1,
+								"intensity": 1
+							}
+						}
+					},
+					"world": {
+						"x": 623,
+						"y": 492,
+						"width": 200,
+						"height": 200,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.25
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "additive"
 					}
 				},
 				{
@@ -180,9 +319,27 @@
 								"deceleration": 3000,
 								"directions": "dir-8",
 								"set-angle": "no",
-								"allow-sliding": true,
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
+							}
+						},
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 150,
+								"cone-of-view": 45,
+								"use-collision-cells": true
+							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
 							}
 						}
 					},
@@ -215,9 +372,9 @@
 				1
 			],
 			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
+				0.2,
+				0.2,
+				0.2,
 				1
 			],
 			"isTransparent": false,
@@ -236,7 +393,7 @@
 	"sid": 216123232476794,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1920,
+	"width": 4000,
 	"height": 1080,
 	"unboundedScrolling": false,
 	"vpX": 0.5,

@@ -24,11 +24,29 @@
 				{
 					"id": "rotate-toward-position",
 					"objectClass": "Player",
-					"sid": 843110111761206,
+					"sid": 560651948874683,
 					"parameters": {
-						"degrees": "10",
+						"degrees": "15",
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "ShadowLight",
+					"sid": 470970765504171,
+					"parameters": {
+						"object": "Player",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Sprite3",
+					"sid": 845514014695072,
+					"parameters": {
+						"object": "Player",
+						"image-point-optional": "0"
 					}
 				}
 			],
@@ -45,6 +63,15 @@
 						"mouse-button": "left",
 						"click-type": "clicked"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 342621521753147,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -157,6 +184,11 @@
 					"parameters": {
 						"opacity": "Sprite.Opacity - 25"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "bullet",
+					"sid": 704820007124240
 				}
 			],
 			"sid": 538484112806848
@@ -299,27 +331,27 @@
 				{
 					"id": "set-max-speed",
 					"objectClass": "Player",
-					"sid": 824233648731473,
+					"sid": 967311834871613,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"max-speed": "2500"
+						"max-speed": "4000"
 					}
 				},
 				{
 					"id": "set-speed",
 					"objectClass": "Player",
-					"sid": 625989960783932,
+					"sid": 991798187030542,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"speed": "2500"
+						"speed": "4000"
 					}
 				},
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 462899953065578,
+					"sid": 759244395994508,
 					"parameters": {
-						"seconds": "0.2"
+						"seconds": "0.1"
 					}
 				},
 				{
@@ -346,11 +378,13 @@
 					}
 				},
 				{
-					"id": "is-overlapping-another-object",
+					"id": "has-los-to-object",
 					"objectClass": "Player",
-					"sid": 399478281085760,
+					"sid": 812253159926223,
+					"behaviorType": "LineOfSight",
 					"parameters": {
-						"object": "PickArea"
+						"object": "Interactable",
+						"image-point": "0"
 					}
 				}
 			],
@@ -462,6 +496,21 @@
 			],
 			"actions": [
 				{
+					"id": "regenerate-region-around-object",
+					"objectClass": "Sprite",
+					"sid": 643374418820894,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"object": "Interactable"
+					}
+				},
+				{
+					"id": "regenerate-obstacle-map",
+					"objectClass": "Sprite",
+					"sid": 162831525226146,
+					"behaviorType": "Pathfinding"
+				},
+				{
 					"id": "find-path",
 					"objectClass": "Sprite",
 					"sid": 613490069811645,
@@ -501,11 +550,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-overlapping-another-object",
+					"id": "has-los-to-object",
 					"objectClass": "Player",
-					"sid": 252881360836080,
+					"sid": 409991034857358,
+					"behaviorType": "LineOfSight",
 					"parameters": {
-						"object": "PickArea"
+						"object": "Interactable",
+						"image-point": "0"
 					}
 				},
 				{
@@ -543,11 +594,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-overlapping-another-object",
+					"id": "has-los-to-object",
 					"objectClass": "Player",
-					"sid": 517514150134508,
+					"sid": 373783322817946,
+					"behaviorType": "LineOfSight",
 					"parameters": {
-						"object": "PickArea"
+						"object": "Interactable",
+						"image-point": "0"
 					},
 					"isInverted": true
 				}
@@ -571,7 +624,29 @@
 					}
 				}
 			],
-			"sid": 255884476812798
+			"sid": 255884476812798,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Interactable",
+					"sid": 866983856508639,
+					"parameters": {
+						"object": "bullet"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "bullet",
+					"sid": 217931500056557
+				}
+			],
+			"sid": 829483914490492
 		}
 	],
 	"sid": 558909492298727
