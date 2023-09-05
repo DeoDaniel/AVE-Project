@@ -39,15 +39,6 @@
 						"object": "Player",
 						"image-point-optional": "0"
 					}
-				},
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "Sprite3",
-					"sid": 845514014695072,
-					"parameters": {
-						"object": "Player",
-						"image-point-optional": "0"
-					}
 				}
 			],
 			"sid": 684779841357073

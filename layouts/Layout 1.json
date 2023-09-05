@@ -262,45 +262,6 @@
 					}
 				},
 				{
-					"type": "Sprite3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 11,
-					"instanceVariables": {},
-					"behaviors": {},
-					"effects": {
-						"RadialBlur": {
-							"isEnabled": true,
-							"parameters": {
-								"radius": 1,
-								"intensity": 1
-							}
-						}
-					},
-					"world": {
-						"x": 623,
-						"y": 492,
-						"width": 200,
-						"height": 200,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.25
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "additive"
-					}
-				},
-				{
 					"type": "Player",
 					"properties": {
 						"initially-visible": true,
@@ -372,9 +333,9 @@
 				1
 			],
 			"backgroundColor": [
-				0.2,
-				0.2,
-				0.2,
+				0.5294117647058824,
+				0.5294117647058824,
+				0.5294117647058824,
 				1
 			],
 			"isTransparent": false,
