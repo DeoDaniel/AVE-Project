@@ -12,6 +12,16 @@
 			"sid": 708431422195591
 		},
 		{
+			"eventType": "variable",
+			"name": "Scroll",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 770634942905127
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -30,18 +40,68 @@
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
 					}
-				},
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "ShadowLight",
-					"sid": 470970765504171,
-					"parameters": {
-						"object": "Player",
-						"image-point-optional": "0"
-					}
 				}
 			],
 			"sid": 684779841357073
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 203785657392218
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-imagepoint",
+					"objectClass": "ShadowLight",
+					"sid": 183462295078394,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "Player",
+						"image-point": "0",
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "pin-to-object-imagepoint",
+					"objectClass": "Flashlight",
+					"sid": 318438041429040,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "Player",
+						"image-point": "1",
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "SpriteFont",
+					"sid": 808114596022931,
+					"parameters": {
+						"text": "\"Hello Player!\"",
+						"duration": "1"
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 254250007358108,
+					"parameters": {
+						"timeline": "Timeline 1",
+						"tags": "\"\""
+					}
+				}
+			],
+			"sid": 985517512227839
 		},
 		{
 			"eventType": "block",
@@ -78,46 +138,45 @@
 					}
 				},
 				{
-					"id": "set-angle-of-motion",
+					"id": "move-to-bottom",
 					"objectClass": "bullet",
-					"sid": 499066123288894,
-					"behaviorType": "Bullet",
+					"sid": 711689373334148
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "bullet",
+					"sid": 265554309738732,
 					"parameters": {
-						"angle": "Player.Angle"
+						"scale": "0.02"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "bullet",
+					"sid": 284711297861342,
+					"parameters": {
+						"width": "2000"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "bullet",
+					"sid": 732311458755617,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetHeight",
+						"end-value": "0",
+						"time": "0.2",
+						"ease": "default",
+						"destroy-on-complete": "yes",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
 			"sid": 126326183998964
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "bullet",
-					"sid": 195685227047984
-				}
-			],
-			"actions": [
-				{
-					"id": "set-scale",
-					"objectClass": "bullet",
-					"sid": 406347402831832,
-					"parameters": {
-						"scale": "0.05"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "bullet",
-					"sid": 543315798889069,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"speed": "5000"
-					}
-				}
-			],
-			"sid": 889109950233779
 		},
 		{
 			"eventType": "block",
@@ -171,15 +230,10 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "Sprite",
-					"sid": 795667333122347,
+					"sid": 549324509558661,
 					"parameters": {
-						"opacity": "Sprite.Opacity - 25"
+						"opacity": "Sprite.Opacity - 10"
 					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "bullet",
-					"sid": 704820007124240
 				}
 			],
 			"sid": 538484112806848
@@ -316,25 +370,34 @@
 					"parameters": {
 						"key": 16
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 874883280349598,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
 				{
 					"id": "set-max-speed",
 					"objectClass": "Player",
-					"sid": 967311834871613,
+					"sid": 676774382747287,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"max-speed": "4000"
+						"max-speed": "10000"
 					}
 				},
 				{
 					"id": "set-speed",
 					"objectClass": "Player",
-					"sid": 991798187030542,
+					"sid": 843939990583339,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"speed": "4000"
+						"speed": "10000"
 					}
 				},
 				{
@@ -395,11 +458,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 591828745093351
-				},
-				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 588249800086818,
@@ -412,18 +470,23 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Interactable",
-					"sid": 841935758712234,
+					"sid": 533444536275120,
 					"parameters": {
 						"angle": "Player.Angle"
 					}
 				},
 				{
-					"id": "set-position-to-another-object",
+					"id": "pin-to-object-imagepoint",
 					"objectClass": "Interactable",
-					"sid": 847889622435746,
+					"sid": 593649075557676,
+					"behaviorType": "Pin",
 					"parameters": {
-						"object": "Player",
-						"image-point-optional": "1"
+						"pin-to": "Player",
+						"image-point": "1",
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
 					}
 				},
 				{
@@ -444,16 +507,74 @@
 					}
 				},
 				{
-					"id": "set-position-to-another-object",
-					"objectClass": "PickArea",
-					"sid": 759442187258579,
+					"id": "set-boolean-instvar",
+					"objectClass": "Flashlight",
+					"sid": 771761407413025,
 					"parameters": {
-						"object": "Interactable",
-						"image-point-optional": "0"
+						"instance-variable": "Enabled",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 117057856875157,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "400"
 					}
 				}
 			],
 			"sid": 455093224629802
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 790956047388839,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "unpin",
+					"objectClass": "Interactable",
+					"sid": 137497372878783,
+					"behaviorType": "Pin"
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Interactable",
+					"sid": 723737724150877,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 884071891778271,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 234673578925157,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "600"
+					}
+				}
+			],
+			"sid": 841941682515222
 		},
 		{
 			"eventType": "block",
@@ -513,29 +634,6 @@
 				}
 			],
 			"sid": 629442582391087
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 203785657392218
-				}
-			],
-			"actions": [
-				{
-					"id": "find-path",
-					"objectClass": "Sprite",
-					"sid": 613490069811645,
-					"behaviorType": "Pathfinding",
-					"parameters": {
-						"x": "Player.X",
-						"y": "Player.Y"
-					}
-				}
-			],
-			"sid": 985517512227839
 		},
 		{
 			"eventType": "block",
@@ -638,6 +736,525 @@
 				}
 			],
 			"sid": 829483914490492
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "Player",
+					"sid": 380638011033097,
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 762055018132930,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 333100341906093,
+					"parameters": {
+						"instance-variable": "Room",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 356058109319267,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"set": "enabled"
+					}
+				},
+				{
+					"id": "find-path",
+					"objectClass": "Sprite",
+					"sid": 613490069811645,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 620642893615102
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 929549234484116,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 277641991444793
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 443043021919368,
+					"parameters": {
+						"variable": "Scroll",
+						"comparison": 2,
+						"value": "2880"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-scroll",
+					"objectClass": "System",
+					"sid": 225276470781734,
+					"parameters": {
+						"layer": "0",
+						"scroll-x": "LayerScrollX(0)+40",
+						"scroll-y": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 272934090377257,
+					"parameters": {
+						"variable": "Scroll",
+						"value": "LayerScrollX(0)"
+					}
+				}
+			],
+			"sid": 605116404164662
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "Player",
+					"sid": 971963131656835,
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 178015725283271,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 974319774290965,
+					"parameters": {
+						"instance-variable": "Room",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 576030393195665,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"set": "disabled"
+					}
+				}
+			],
+			"sid": 329782909617715
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 316389969664157,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 642461766937594
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 830479158255939,
+					"parameters": {
+						"variable": "Scroll",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-scroll",
+					"objectClass": "System",
+					"sid": 715512373413580,
+					"parameters": {
+						"layer": "0",
+						"scroll-x": "LayerScrollX(0)-40",
+						"scroll-y": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 207241495685412,
+					"parameters": {
+						"variable": "Scroll",
+						"value": "LayerScrollX(0)"
+					}
+				}
+			],
+			"sid": 407242416542634
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Interactable",
+					"sid": 636046237066323,
+					"parameters": {
+						"object": "Area"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Door",
+					"sid": 989655183925146,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Door",
+					"sid": 264326758897828,
+					"parameters": {
+						"color": "rgbEx(0, 255, 0)"
+					}
+				}
+			],
+			"sid": 256573016218731
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Interactable",
+					"sid": 724856832197163,
+					"parameters": {
+						"object": "Area"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Door",
+					"sid": 395301043330470,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Door",
+					"sid": 333436770253385,
+					"parameters": {
+						"color": "rgbEx(255, 0, 0)"
+					}
+				}
+			],
+			"sid": 607409102964532
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Flashlight",
+					"sid": 326647472064442,
+					"parameters": {
+						"object": "Interactable"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 361571604829732,
+					"behaviorType": "ShadowCaster",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Interactable",
+					"sid": 936634537551343,
+					"parameters": {
+						"color": "rgbEx(100, 100, 100)"
+					}
+				}
+			],
+			"sid": 395872656333008
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Flashlight",
+					"sid": 624225010391434,
+					"parameters": {
+						"object": "Interactable"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 200544501945891,
+					"behaviorType": "ShadowCaster",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Interactable",
+					"sid": 125347144769038,
+					"parameters": {
+						"color": "rgbEx(25, 25, 25)"
+					}
+				}
+			],
+			"sid": 568965911221979
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Flashlight",
+					"sid": 495104337507129,
+					"parameters": {
+						"object": "Sprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 917909272170962,
+					"behaviorType": "ShadowCaster",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Sprite",
+					"sid": 530189888046248,
+					"parameters": {
+						"color": "rgbEx(100, 100, 100)"
+					}
+				}
+			],
+			"sid": 259106398802865
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Flashlight",
+					"sid": 188092139743675,
+					"parameters": {
+						"object": "Sprite"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 779521161951223,
+					"behaviorType": "ShadowCaster",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Sprite",
+					"sid": 128173166721031,
+					"parameters": {
+						"color": "rgbEx(25, 25, 25)"
+					}
+				}
+			],
+			"sid": 321957604361491
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 867019216749427,
+					"parameters": {
+						"key": 70
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 751468339339657,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "toggle-boolean-instvar",
+					"objectClass": "Flashlight",
+					"sid": 468273503491187,
+					"parameters": {
+						"instance-variable": "Enabled"
+					}
+				}
+			],
+			"sid": 706166632082370
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Flashlight",
+					"sid": 496176143091837,
+					"parameters": {
+						"instance-variable": "Enabled"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "Flashlight",
+					"sid": 370043418139725,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Flashlight",
+					"sid": 869136693057562,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 828259911527829
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Flashlight",
+					"sid": 704762347164510,
+					"parameters": {
+						"instance-variable": "Enabled"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "Flashlight",
+					"sid": 807555515556732,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Flashlight",
+					"sid": 624193340620483,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 852707869699647
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-keyframe-reached",
+					"objectClass": "TimelineController",
+					"sid": 582960908111622
+				}
+			],
+			"actions": [
+				{
+					"id": "typewriter-text",
+					"objectClass": "SpriteFont",
+					"sid": 373517289951153,
+					"parameters": {
+						"text": "SpriteFont.Text",
+						"duration": "0.5"
+					}
+				}
+			],
+			"sid": 538094465405522
 		}
 	],
 	"sid": 558909492298727

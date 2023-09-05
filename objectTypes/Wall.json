@@ -1,10 +1,16 @@
 {
-	"name": "PickArea",
+	"name": "Wall",
 	"plugin-id": "Sprite",
-	"sid": 465230337822434,
+	"sid": 104881535494664,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 858979559336336
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -18,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 471827,
+						"imageSpriteId": 4580520,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 981726671631303,
+				"sid": 590599297767149,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

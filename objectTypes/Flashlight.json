@@ -1,17 +1,30 @@
 {
-	"name": "bullet",
+	"name": "Flashlight",
 	"plugin-id": "Sprite",
-	"sid": 102283731030476,
+	"sid": 960788544253931,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [
+	"instanceVariables": [
 		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 275834082289259
+			"name": "Enabled",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 637257450183702
 		}
 	],
-	"effectTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 263051958236018
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
+		}
+	],
 	"animations": {
 		"items": [
 			{
@@ -24,12 +37,22 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8498900,
+						"imageSpriteId": 7217118,
+						"collisionPoly": {
+							"points": [
+								0.9,
+								0.2,
+								0.9,
+								0.8,
+								0.2,
+								0.5
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 461023832987467,
+				"sid": 635590113727690,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
