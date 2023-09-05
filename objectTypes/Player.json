@@ -3,17 +3,20 @@
 	"plugin-id": "Sprite",
 	"sid": 792667009531476,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Room",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 564229484952174
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "EightDir",
 			"name": "8Direction",
 			"sid": 266410544150608
-		},
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 374407450560219
 		},
 		{
 			"behaviorId": "LOS",
@@ -24,6 +27,11 @@
 			"behaviorId": "bound",
 			"name": "BoundToLayout",
 			"sid": 852770077100870
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 417846347534917
 		}
 	],
 	"effectTypes": [],
@@ -56,7 +64,7 @@
 						"imagePoints": [
 							{
 								"name": "Image Point 1",
-								"x": 1.1111111111111112,
+								"x": 1,
 								"y": 0.47619047619047616
 							}
 						],
