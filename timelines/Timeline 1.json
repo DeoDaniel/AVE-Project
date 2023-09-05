@@ -3,11 +3,11 @@
 	"enabled": true,
 	"interpolationMode": "default",
 	"resultMode": "default",
-	"ease": "noease",
+	"ease": "default",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 1,
-	"totalTime": 5,
+	"playheadTime": 0,
+	"totalTime": 3.4,
 	"stepTime": 0.1,
 	"useStepTime": true,
 	"showingInterpolationModes": false,
@@ -21,7 +21,111 @@
 	"startOnLayout": "",
 	"transformWithSceneGraph": true,
 	"ignoreSystemTimescale": true,
-	"tracks": [],
+	"tracks": [
+		{
+			"type": "instance-track",
+			"worldInstance": 11,
+			"objectType": "SpriteFont",
+			"project": "jylnef8x06j",
+			"enabled": true,
+			"interpolationMode": "default",
+			"resultMode": "default",
+			"ease": "default",
+			"pathMode": "default",
+			"resizeMode": "default",
+			"initialVisibility": true,
+			"id": "",
+			"virtualPosition": {
+				"useColor": true,
+				"colorSet": false,
+				"relativeFlags": 2047
+			},
+			"keyframes": [
+				{
+					"time": 0,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				},
+				{
+					"time": 1,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				},
+				{
+					"time": 2,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				}
+			],
+			"propertyTracks": [
+				{
+					"property": "text",
+					"source": {
+						"type": "plugin",
+						"uid": "Spritefont2"
+					},
+					"enabled": true,
+					"interpolationMode": "step",
+					"resultMode": "default",
+					"ease": "default",
+					"pathMode": "none",
+					"propertyKeyframes": [
+						{
+							"time": 0,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "AVE Alpha v0.1",
+							"rValue": "AVE Alpha v0.1",
+							"aValue": "AVE Alpha v0.1",
+							"addons": []
+						},
+						{
+							"time": 1,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "Hello Player!",
+							"rValue": "Hello Player!",
+							"aValue": "Hello Player!",
+							"addons": []
+						},
+						{
+							"time": 2,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "You're probably wondering why and how you end up here...",
+							"rValue": "You're probably wondering why and how you end up here...",
+							"aValue": "You're probably wondering why and how you end up here...",
+							"addons": []
+						}
+					]
+				}
+			],
+			"propertyTracksRoot": {
+				"enabled": true,
+				"interpolationMode": "default",
+				"resultMode": "default",
+				"ease": "default",
+				"pathMode": "default",
+				"resizeMode": "",
+				"expanded": true,
+				"name": "Property Track Folder",
+				"items": [],
+				"subfolders": []
+			}
+		}
+	],
 	"tracksRoot": {
 		"enabled": true,
 		"interpolationMode": "default",

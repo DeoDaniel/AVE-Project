@@ -4,11 +4,17 @@
 	"sid": 188791515074236,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 513289619082867
+		}
+	],
 	"effectTypes": [
 		{
-			"effectId": "softlight",
-			"name": "SoftLight"
+			"effectId": "radialblur",
+			"name": "RadialBlur"
 		}
 	]
 }

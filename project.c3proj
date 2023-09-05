@@ -29,15 +29,22 @@
 		},
 		{
 			"type": "plugin",
-			"id": "shadowlight",
-			"name": "Shadow light",
+			"id": "Spritefont2",
+			"name": "Sprite font",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Bullet",
-			"name": "Bullet",
+			"type": "plugin",
+			"id": "Timeline",
+			"name": "Timeline controller",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "shadowlight",
+			"name": "Shadow light",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -64,15 +71,22 @@
 		},
 		{
 			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -92,8 +106,8 @@
 		},
 		{
 			"type": "effect",
-			"id": "softlight",
-			"name": "Soft light",
+			"id": "radialblur",
+			"name": "Radial blur",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -107,9 +121,13 @@
 			"bullet",
 			"Sprite",
 			"Interactable",
-			"PickArea",
-			"Sprite2",
-			"ShadowLight"
+			"Area",
+			"ShadowLight",
+			"SpriteFont",
+			"Wall",
+			"Door",
+			"Flashlight",
+			"TimelineController"
 		],
 		"subfolders": []
 	},
