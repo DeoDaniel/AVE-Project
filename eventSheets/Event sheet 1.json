@@ -720,27 +720,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Interactable",
-					"sid": 866983856508639,
-					"parameters": {
-						"object": "bullet"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "bullet",
-					"sid": 217931500056557
-				}
-			],
-			"sid": 829483914490492
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "is-on-screen",
 					"objectClass": "Player",
 					"sid": 380638011033097,
@@ -1247,10 +1226,10 @@
 				{
 					"id": "typewriter-text",
 					"objectClass": "SpriteFont",
-					"sid": 373517289951153,
+					"sid": 361518613450546,
 					"parameters": {
 						"text": "SpriteFont.Text",
-						"duration": "0.5"
+						"duration": "1"
 					}
 				}
 			],
