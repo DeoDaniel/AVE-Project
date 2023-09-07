@@ -1,0 +1,10 @@
+{
+	"name": "SpeechSynthesis",
+	"plugin-id": "SpeechSynthesis",
+	"sid": 693446710073370,
+	"singleglobal-inst": {
+		"type": "SpeechSynthesis",
+		"properties": {},
+		"uid": 20
+	}
+}

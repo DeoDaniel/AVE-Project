@@ -21,8 +21,8 @@
 	],
 	"effectTypes": [
 		{
-			"effectId": "radialblur",
-			"name": "RadialBlur"
+			"effectId": "softlight",
+			"name": "SoftLight"
 		}
 	],
 	"animations": {
@@ -44,7 +44,7 @@
 								0.2,
 								0.9,
 								0.8,
-								0.2,
+								0.3,
 								0.5
 							]
 						},

@@ -34,11 +34,21 @@
 				{
 					"id": "rotate-toward-position",
 					"objectClass": "Player",
-					"sid": 560651948874683,
+					"sid": 914303535090631,
 					"parameters": {
 						"degrees": "15",
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "rotate-toward-position",
+					"objectClass": "Sprite",
+					"sid": 281323606845517,
+					"parameters": {
+						"degrees": "5",
+						"x": "Player.X",
+						"y": "Player.Y"
 					}
 				}
 			],
@@ -71,11 +81,11 @@
 				{
 					"id": "pin-to-object-imagepoint",
 					"objectClass": "Flashlight",
-					"sid": 318438041429040,
+					"sid": 487506258279910,
 					"behaviorType": "Pin",
 					"parameters": {
 						"pin-to": "Player",
-						"image-point": "1",
+						"image-point": "0",
 						"angle": true,
 						"width-type": "no",
 						"height-type": "no",
@@ -85,10 +95,31 @@
 				{
 					"id": "typewriter-text",
 					"objectClass": "SpriteFont",
-					"sid": 808114596022931,
+					"sid": 576368605492437,
 					"parameters": {
-						"text": "\"Hello Player!\"",
+						"text": "\"Welcome to AVE\"",
 						"duration": "1"
+					}
+				},
+				{
+					"id": "speak-text",
+					"objectClass": "SpeechSynthesis",
+					"sid": 389175588831429,
+					"parameters": {
+						"text": "\"Welcome to AVE\"",
+						"language": "\"en-US\"",
+						"voice-uri": "\"\"",
+						"volume": "0",
+						"rate": "1",
+						"pitch": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 829682019145782,
+					"parameters": {
+						"seconds": "3"
 					}
 				},
 				{
@@ -98,6 +129,19 @@
 					"parameters": {
 						"timeline": "Timeline 1",
 						"tags": "\"\""
+					}
+				},
+				{
+					"id": "speak-text",
+					"objectClass": "SpeechSynthesis",
+					"sid": 109378326922481,
+					"parameters": {
+						"text": "\"WASD to move, Shift to dash, E to interact, F to use flashlight. Disclaimer: This game is still in Alpha\"",
+						"language": "\"en-US\"",
+						"voice-uri": "\"\"",
+						"volume": "0",
+						"rate": "1",
+						"pitch": "0"
 					}
 				}
 			],
@@ -174,6 +218,18 @@
 						"ping-pong": "no",
 						"repeat-count": "1"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 713875654477904,
+					"parameters": {
+						"audio-file": "pew-pew-lame-sound-effect",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 126326183998964
@@ -210,6 +266,24 @@
 					"id": "destroy",
 					"objectClass": "Player",
 					"sid": 678334849817707
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 585761424317838,
+					"parameters": {
+						"audio-file": "emotional-damage-meme",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "GameOver",
+					"sid": 661140831661979,
+					"behaviorType": "Fade"
 				}
 			],
 			"sid": 473587202985510
@@ -385,7 +459,7 @@
 				{
 					"id": "set-max-speed",
 					"objectClass": "Player",
-					"sid": 676774382747287,
+					"sid": 513853302511445,
 					"behaviorType": "8Direction",
 					"parameters": {
 						"max-speed": "10000"
@@ -394,7 +468,7 @@
 				{
 					"id": "set-speed",
 					"objectClass": "Player",
-					"sid": 843939990583339,
+					"sid": 512007552930821,
 					"behaviorType": "8Direction",
 					"parameters": {
 						"speed": "10000"
@@ -403,7 +477,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 759244395994508,
+					"sid": 330844154665803,
 					"parameters": {
 						"seconds": "0.1"
 					}
@@ -415,6 +489,18 @@
 					"behaviorType": "8Direction",
 					"parameters": {
 						"max-speed": "600"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 836134076215118,
+					"parameters": {
+						"audio-file": "woosh-sound-effect",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
 					}
 				}
 			],
@@ -490,23 +576,6 @@
 					}
 				},
 				{
-					"id": "set-opacity",
-					"objectClass": "Interactable",
-					"sid": 582422172679569,
-					"parameters": {
-						"opacity": "100"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Interactable",
-					"sid": 870376471783745,
-					"behaviorType": "Solid",
-					"parameters": {
-						"state": "disabled"
-					}
-				},
-				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Flashlight",
 					"sid": 771761407413025,
@@ -516,12 +585,20 @@
 					}
 				},
 				{
+					"id": "set-blend-mode",
+					"objectClass": "Interactable",
+					"sid": 133052452062675,
+					"parameters": {
+						"blend-mode": "normal"
+					}
+				},
+				{
 					"id": "set-max-speed",
 					"objectClass": "Player",
-					"sid": 117057856875157,
+					"sid": 518970974040359,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"max-speed": "400"
+						"max-speed": "300"
 					}
 				}
 			],
@@ -548,20 +625,11 @@
 					"behaviorType": "Pin"
 				},
 				{
-					"id": "set-opacity",
+					"id": "set-blend-mode",
 					"objectClass": "Interactable",
-					"sid": 723737724150877,
+					"sid": 272187576014716,
 					"parameters": {
-						"opacity": "50"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Interactable",
-					"sid": 884071891778271,
-					"behaviorType": "Solid",
-					"parameters": {
-						"state": "enabled"
+						"blend-mode": "additive"
 					}
 				},
 				{
@@ -660,20 +728,11 @@
 			],
 			"actions": [
 				{
-					"id": "set-opacity",
+					"id": "set-blend-mode",
 					"objectClass": "Interactable",
-					"sid": 627197793588737,
+					"sid": 637533137983810,
 					"parameters": {
-						"opacity": "50"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Interactable",
-					"sid": 952199924878955,
-					"behaviorType": "Solid",
-					"parameters": {
-						"state": "enabled"
+						"blend-mode": "additive"
 					}
 				}
 			],
@@ -696,20 +755,11 @@
 			],
 			"actions": [
 				{
-					"id": "set-opacity",
+					"id": "set-blend-mode",
 					"objectClass": "Interactable",
-					"sid": 707835043315554,
+					"sid": 748103960715110,
 					"parameters": {
-						"opacity": "100"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Interactable",
-					"sid": 952199924878955,
-					"behaviorType": "Solid",
-					"parameters": {
-						"state": "enabled"
+						"blend-mode": "normal"
 					}
 				}
 			],
@@ -726,13 +776,21 @@
 					"isInverted": true
 				},
 				{
-					"id": "compare-instance-variable",
+					"id": "compare-x",
 					"objectClass": "Player",
-					"sid": 762055018132930,
+					"sid": 450364277108097,
 					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "0"
+						"comparison": 4,
+						"x-co-ordinate": "1920"
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "Player",
+					"sid": 630886653692884,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "3840"
 					}
 				}
 			],
@@ -824,10 +882,71 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 690790720295935,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 829328353859033
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 873987066778645,
+					"parameters": {
+						"variable": "Scroll",
+						"comparison": 4,
+						"value": "2880"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-scroll",
+					"objectClass": "System",
+					"sid": 397067329629956,
+					"parameters": {
+						"layer": "0",
+						"scroll-x": "LayerScrollX(0)-40",
+						"scroll-y": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 704753692571851,
+					"parameters": {
+						"variable": "Scroll",
+						"value": "LayerScrollX(0)"
+					}
+				}
+			],
+			"sid": 379967521786886
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "is-on-screen",
 					"objectClass": "Player",
 					"sid": 971963131656835,
 					"isInverted": true
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "Player",
+					"sid": 376882168919482,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "1920"
+					}
 				},
 				{
 					"id": "compare-instance-variable",
@@ -918,12 +1037,121 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-on-screen",
+					"objectClass": "Player",
+					"sid": 964922835078390,
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 812786980832712,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "Player",
+					"sid": 464581837157326,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "3840"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 973926056251855,
+					"parameters": {
+						"instance-variable": "Room",
+						"value": "2"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 662705781288336,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"set": "disabled"
+					}
+				}
+			],
+			"sid": 370828037871291
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 909586711081124,
+					"parameters": {
+						"instance-variable": "Room",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 410242898530523
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 565370295440864,
+					"parameters": {
+						"variable": "Scroll",
+						"comparison": 2,
+						"value": "5760"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-scroll",
+					"objectClass": "System",
+					"sid": 648273559022981,
+					"parameters": {
+						"layer": "0",
+						"scroll-x": "LayerScrollX(0)+40",
+						"scroll-y": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 708575288198280,
+					"parameters": {
+						"variable": "Scroll",
+						"value": "LayerScrollX(0)"
+					}
+				}
+			],
+			"sid": 844302216098698
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "Interactable",
 					"sid": 636046237066323,
 					"parameters": {
 						"object": "Area"
 					}
+				},
+				{
+					"id": "is-enabled",
+					"objectClass": "Door",
+					"sid": 666066309364358,
+					"behaviorType": "Solid"
 				}
 			],
 			"actions": [
@@ -939,9 +1167,21 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "Door",
-					"sid": 264326758897828,
+					"sid": 197293543203538,
 					"parameters": {
-						"color": "rgbEx(0, 255, 0)"
+						"color": "rgbEx(0, 100, 0)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 968554149815265,
+					"parameters": {
+						"audio-file": "achievement-mp3-sound",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
 					}
 				}
 			],
@@ -958,6 +1198,13 @@
 						"object": "Area"
 					},
 					"isInverted": true
+				},
+				{
+					"id": "is-enabled",
+					"objectClass": "Door",
+					"sid": 125064905313966,
+					"behaviorType": "Solid",
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -973,9 +1220,9 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "Door",
-					"sid": 333436770253385,
+					"sid": 957621187695673,
 					"parameters": {
-						"color": "rgbEx(255, 0, 0)"
+						"color": "rgbEx(100, 0, 0)"
 					}
 				}
 			],
@@ -1144,6 +1391,18 @@
 					"parameters": {
 						"instance-variable": "Enabled"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 457882782486651,
+					"parameters": {
+						"audio-file": "flashlight-click",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 706166632082370
@@ -1234,6 +1493,27 @@
 				}
 			],
 			"sid": 538094465405522
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-timeline-finished",
+					"objectClass": "TimelineController",
+					"sid": 235084209052135
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "SpriteFont",
+					"sid": 528680864007171,
+					"parameters": {
+						"opacity": "25"
+					}
+				}
+			],
+			"sid": 959386257341071
 		}
 	],
 	"sid": 558909492298727

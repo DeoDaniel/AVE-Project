@@ -1,14 +1,14 @@
 {
-	"name": "Door",
+	"name": "Door2",
 	"plugin-id": "Sprite",
-	"sid": 173158555297819,
+	"sid": 268322468905089,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 624792189050224
+			"sid": 873248956189087
 		}
 	],
 	"effectTypes": [],
@@ -24,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 344420,
+						"imageSpriteId": 9289996,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 331393985256121,
+				"sid": 732908527723547,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

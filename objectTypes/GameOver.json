@@ -1,14 +1,19 @@
 {
-	"name": "SpriteFont",
+	"name": "GameOver",
 	"plugin-id": "Spritefont2",
-	"sid": 483864281624191,
+	"sid": 497416450650131,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Anchor",
 			"name": "Anchor",
-			"sid": 583893682838801
+			"sid": 460396210190059
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 881278859433389
 		}
 	],
 	"effectTypes": [],
@@ -20,7 +25,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 2080892,
+		"imageSpriteId": 2643255,
 		"useCollisionPoly": true
 	}
 }

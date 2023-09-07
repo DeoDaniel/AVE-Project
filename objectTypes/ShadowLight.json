@@ -11,10 +11,5 @@
 			"sid": 513289619082867
 		}
 	],
-	"effectTypes": [
-		{
-			"effectId": "radialblur",
-			"name": "RadialBlur"
-		}
-	]
+	"effectTypes": []
 }

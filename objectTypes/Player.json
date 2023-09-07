@@ -27,11 +27,6 @@
 			"behaviorId": "bound",
 			"name": "BoundToLayout",
 			"sid": 852770077100870
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 417846347534917
 		}
 	],
 	"effectTypes": [],
