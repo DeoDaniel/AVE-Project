@@ -1,0 +1,22 @@
+{
+	"name": "StaminaBar",
+	"plugin-id": "progressbar",
+	"sid": 447968766522724,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Stamina",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 523174482634811
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 985912124431660
+		}
+	]
+}
