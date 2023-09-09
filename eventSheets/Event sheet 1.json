@@ -113,12 +113,16 @@
 				{
 					"id": "speak-text",
 					"objectClass": "SpeechSynthesis",
+<<<<<<< Updated upstream
 					"sid": 183960800296886,
+=======
+					"sid": 378204452094274,
+>>>>>>> Stashed changes
 					"parameters": {
 						"text": "\"Welcome to AVE\"",
 						"language": "\"en-US\"",
 						"voice-uri": "\"\"",
-						"volume": "0",
+						"volume": "-5",
 						"rate": "1",
 						"pitch": "2"
 					}
@@ -143,12 +147,16 @@
 				{
 					"id": "speak-text",
 					"objectClass": "SpeechSynthesis",
+<<<<<<< Updated upstream
 					"sid": 234427704599386,
+=======
+					"sid": 222868137811363,
+>>>>>>> Stashed changes
 					"parameters": {
-						"text": "\"WASD to move, Shift to dash, E to interact, F to use flashlight. Disclaimer: This game is still in Alpha\"",
+						"text": "\"WASD to move, Shift to dash, Left Click to interact, F to use flashlight. Disclaimer: This game is still in Alpha\"",
 						"language": "\"en-US\"",
 						"voice-uri": "\"\"",
-						"volume": "0",
+						"volume": "-5",
 						"rate": "1",
 						"pitch": "2"
 					}
@@ -176,6 +184,22 @@
 						"variable": "Picked"
 					},
 					"isInverted": true
+				},
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Player",
+					"sid": 946360016140149,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Interactable",
+						"image-point": "0"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-on-screen",
+					"objectClass": "Player",
+					"sid": 821314225263278
 				}
 			],
 			"actions": [
@@ -206,7 +230,7 @@
 				{
 					"id": "set-width",
 					"objectClass": "bullet",
-					"sid": 284711297861342,
+					"sid": 141898338451801,
 					"parameters": {
 						"width": "2000"
 					}
@@ -231,185 +255,17 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 713875654477904,
+					"sid": 320989592271365,
 					"parameters": {
 						"audio-file": "pew-pew-lame-sound-effect",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
 				}
 			],
 			"sid": 126326183998964
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Player",
-					"sid": 242975068420518,
-					"parameters": {
-						"object": "Sprite"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player",
-					"sid": 416470267252729,
-					"parameters": {
-						"instance-variable": "Health",
-						"value": "-25"
-					}
-				},
-				{
-					"id": "set-progress",
-					"objectClass": "ProgressBar",
-					"sid": 636887905148030,
-					"parameters": {
-						"value": "Player.Health"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Player",
-					"sid": 507228484192089,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 352021652836088,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Player",
-					"sid": 986624957455557,
-					"parameters": {
-						"frame-number": "0"
-					}
-				}
-			],
-			"sid": 473587202985510
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 661823480218285,
-					"parameters": {
-						"instance-variable": "Health",
-						"comparison": 3,
-						"value": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Sprite",
-					"sid": 905176065546985,
-					"behaviorType": "Pathfinding"
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 469735321433354,
-					"behaviorType": "Pathfinding",
-					"parameters": {
-						"set": "disabled"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Player",
-					"sid": 678334849817707
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 585761424317838,
-					"parameters": {
-						"audio-file": "emotional-damage-meme",
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
-					"id": "start-fade",
-					"objectClass": "GameOver",
-					"sid": 661140831661979,
-					"behaviorType": "Fade"
-				},
-				{
-					"id": "set-layer-background-color",
-					"objectClass": "System",
-					"sid": 668841191141638,
-					"parameters": {
-						"layer": "0",
-						"color": "rgbEx(15, 0, 0)"
-					}
-				}
-			],
-			"sid": 944287019561063
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Sprite",
-					"sid": 353206912290508,
-					"parameters": {
-						"object": "bullet"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "Sprite",
-					"sid": 549324509558661,
-					"parameters": {
-						"opacity": "Sprite.Opacity - 10"
-					}
-				}
-			],
-			"sid": 538484112806848
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-opacity",
-					"objectClass": "Sprite",
-					"sid": 553087286870159,
-					"parameters": {
-						"comparison": 0,
-						"opacity": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Sprite",
-					"sid": 143250372575792
-				}
-			],
-			"sid": 971540631663685
 		},
 		{
 			"eventType": "block",
@@ -517,7 +373,7 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 970837593109411,
+					"sid": 905957340278911,
 					"parameters": {
 						"key": 16
 					}
@@ -525,36 +381,42 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 874883280349598,
+					"sid": 479391186907107,
 					"parameters": {
 						"variable": "Picked"
 					},
 					"isInverted": true
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 338493334153640,
+					"behaviorType": "8Direction"
 				}
 			],
 			"actions": [
 				{
 					"id": "set-max-speed",
 					"objectClass": "Player",
-					"sid": 513853302511445,
+					"sid": 263490885003666,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"max-speed": "10000"
+						"max-speed": "5000"
 					}
 				},
 				{
 					"id": "set-speed",
 					"objectClass": "Player",
-					"sid": 512007552930821,
+					"sid": 960416146236694,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"speed": "10000"
+						"speed": "5000"
 					}
 				},
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 330844154665803,
+					"sid": 766473609201886,
 					"parameters": {
 						"seconds": "0.1"
 					}
@@ -562,7 +424,7 @@
 				{
 					"id": "set-max-speed",
 					"objectClass": "Player",
-					"sid": 846423889069397,
+					"sid": 781248927388199,
 					"behaviorType": "8Direction",
 					"parameters": {
 						"max-speed": "600"
@@ -571,27 +433,45 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 836134076215118,
+					"sid": 833803367769236,
 					"parameters": {
 						"audio-file": "woosh-sound-effect",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "5",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "StaminaBar",
+					"sid": 650385748936713,
+					"parameters": {
+						"instance-variable": "Stamina",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-progress",
+					"objectClass": "StaminaBar",
+					"sid": 188072144138424,
+					"parameters": {
+						"value": "StaminaBar.Stamina"
+					}
 				}
 			],
-			"sid": 712539185027566
+			"sid": 535050511998491
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 442648340975747,
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 460331010969676,
 					"parameters": {
-						"key": 69
+						"mouse-button": "left",
+						"click-type": "clicked"
 					}
 				},
 				{
@@ -615,79 +495,145 @@
 					}
 				}
 			],
-			"sid": 742275458273126
+			"sid": 742275458273126,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 111015787939240,
+							"parameters": {
+								"variable": "Picked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "Interactable",
+							"sid": 480768255796141,
+							"parameters": {
+								"angle": "Player.Angle"
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Interactable",
+							"sid": 537660754210986,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Player",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Flashlight",
+							"sid": 574014351279449,
+							"parameters": {
+								"instance-variable": "Enabled",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-blend-mode",
+							"objectClass": "Interactable",
+							"sid": 270080132317744,
+							"parameters": {
+								"blend-mode": "normal"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Interactable",
+							"sid": 311371235053090,
+							"parameters": {
+								"color": "rgbEx(50, 50, 50)"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player",
+							"sid": 726568890491549,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"max-speed": "300"
+							}
+						}
+					],
+					"sid": 702542140058047
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 161792122973893,
+							"parameters": {
+								"variable": "Picked"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "unpin",
+							"objectClass": "Interactable",
+							"sid": 470269343441305,
+							"behaviorType": "Pin"
+						},
+						{
+							"id": "set-blend-mode",
+							"objectClass": "Interactable",
+							"sid": 687845265424201,
+							"parameters": {
+								"blend-mode": "additive"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Interactable",
+							"sid": 437506801378467,
+							"parameters": {
+								"color": "rgbEx(10, 10, 10)"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player",
+							"sid": 687493662192293,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"max-speed": "600"
+							}
+						}
+					],
+					"sid": 137617234538933
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 588249800086818,
-					"parameters": {
-						"variable": "Picked"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-angle",
-					"objectClass": "Interactable",
-					"sid": 533444536275120,
-					"parameters": {
-						"angle": "Player.Angle"
-					}
-				},
-				{
-					"id": "pin-to-object-imagepoint",
-					"objectClass": "Interactable",
-					"sid": 593649075557676,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "Player",
-						"image-point": "1",
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				},
-				{
-					"id": "set-boolean-instvar",
+					"id": "is-overlapping-another-object",
 					"objectClass": "Flashlight",
-					"sid": 771761407413025,
+					"sid": 985033279994089,
 					"parameters": {
-						"instance-variable": "Enabled",
-						"value": "false"
+						"object": "Interactable"
 					}
 				},
-				{
-					"id": "set-blend-mode",
-					"objectClass": "Interactable",
-					"sid": 133052452062675,
-					"parameters": {
-						"blend-mode": "normal"
-					}
-				},
-				{
-					"id": "set-max-speed",
-					"objectClass": "Player",
-					"sid": 518970974040359,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"max-speed": "300"
-					}
-				}
-			],
-			"sid": 455093224629802
-		},
-		{
-			"eventType": "block",
-			"conditions": [
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 790956047388839,
+					"sid": 978492699405635,
 					"parameters": {
 						"variable": "Picked"
 					},
@@ -696,30 +642,314 @@
 			],
 			"actions": [
 				{
-					"id": "unpin",
+					"id": "set-enabled",
 					"objectClass": "Interactable",
-					"sid": 137497372878783,
-					"behaviorType": "Pin"
-				},
-				{
-					"id": "set-blend-mode",
-					"objectClass": "Interactable",
-					"sid": 272187576014716,
+					"sid": 445913207146907,
+					"behaviorType": "ShadowCaster",
 					"parameters": {
-						"blend-mode": "additive"
+						"state": "enabled"
 					}
 				},
 				{
-					"id": "set-max-speed",
-					"objectClass": "Player",
-					"sid": 234673578925157,
-					"behaviorType": "8Direction",
+					"id": "set-default-color",
+					"objectClass": "Interactable",
+					"sid": 638734273391240,
 					"parameters": {
-						"max-speed": "600"
+						"color": "rgbEx(100, 100, 100)"
 					}
 				}
 			],
-			"sid": 841941682515222
+			"sid": 101498907391360
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Flashlight",
+					"sid": 322441148576732,
+					"parameters": {
+						"object": "Interactable"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 978492699405635,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Interactable",
+					"sid": 385123140309857,
+					"behaviorType": "ShadowCaster",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Interactable",
+					"sid": 738271711554068,
+					"parameters": {
+						"color": "rgbEx(10, 10, 10)"
+					}
+				}
+			],
+			"sid": 425538300320088
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Player",
+					"sid": 848819193402512,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Interactable",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 978492699405635,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-blend-mode",
+					"objectClass": "Interactable",
+					"sid": 219414057137306,
+					"parameters": {
+						"blend-mode": "additive"
+					}
+				}
+			],
+			"sid": 708108167234569
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Player",
+					"sid": 768275368264980,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Interactable",
+						"image-point": "0"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 978492699405635,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-blend-mode",
+					"objectClass": "Interactable",
+					"sid": 277130812721689,
+					"parameters": {
+						"blend-mode": "normal"
+					}
+				}
+			],
+			"sid": 116904618465989
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 242975068420518,
+					"parameters": {
+						"object": "Sprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Player",
+					"sid": 838947482751986,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "25"
+					}
+				},
+				{
+					"id": "set-progress",
+					"objectClass": "HealthBar",
+					"sid": 636887905148030,
+					"parameters": {
+						"value": "Player.Health"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Player",
+					"sid": 507228484192089,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 352021652836088,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Player",
+					"sid": 986624957455557,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 473587202985510
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 661823480218285,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Sprite",
+					"sid": 905176065546985,
+					"behaviorType": "Pathfinding"
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 469735321433354,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"set": "disabled"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 678334849817707
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 548763723108175,
+					"parameters": {
+						"audio-file": "game_over",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "GameOver",
+					"sid": 661140831661979,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-layer-background-color",
+					"objectClass": "System",
+					"sid": 668841191141638,
+					"parameters": {
+						"layer": "0",
+						"color": "rgbEx(15, 0, 0)"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HealthBar",
+					"sid": 806915664913975,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 944287019561063
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite",
+					"sid": 353206912290508,
+					"parameters": {
+						"object": "bullet"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "Sprite",
+					"sid": 549324509558661,
+					"parameters": {
+						"opacity": "Sprite.Opacity - 10"
+					}
+				}
+			],
+			"sid": 538484112806848
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-opacity",
+					"objectClass": "Sprite",
+					"sid": 553087286870159,
+					"parameters": {
+						"comparison": 0,
+						"opacity": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite",
+					"sid": 143250372575792
+				}
+			],
+			"sid": 971540631663685
 		},
 		{
 			"eventType": "block",
@@ -779,69 +1009,6 @@
 				}
 			],
 			"sid": 629442582391087
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "has-los-to-object",
-					"objectClass": "Player",
-					"sid": 409991034857358,
-					"behaviorType": "LineOfSight",
-					"parameters": {
-						"object": "Interactable",
-						"image-point": "0"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 953089364952030,
-					"parameters": {
-						"variable": "Picked"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-blend-mode",
-					"objectClass": "Interactable",
-					"sid": 637533137983810,
-					"parameters": {
-						"blend-mode": "additive"
-					}
-				}
-			],
-			"sid": 857439411610218
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "has-los-to-object",
-					"objectClass": "Player",
-					"sid": 373783322817946,
-					"behaviorType": "LineOfSight",
-					"parameters": {
-						"object": "Interactable",
-						"image-point": "0"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-blend-mode",
-					"objectClass": "Interactable",
-					"sid": 748103960715110,
-					"parameters": {
-						"blend-mode": "normal"
-					}
-				}
-			],
-			"sid": 255884476812798,
-			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -1225,40 +1392,62 @@
 					}
 				},
 				{
-					"id": "is-enabled",
+					"id": "is-boolean-instance-variable-set",
 					"objectClass": "Door",
-					"sid": 666066309364358,
-					"behaviorType": "Solid"
+					"sid": 258676811119613,
+					"parameters": {
+						"instance-variable": "Open"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 865225210550128,
+					"parameters": {
+						"variable": "Picked"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
 				{
-					"id": "set-enabled",
+					"id": "set-boolean-instvar",
 					"objectClass": "Door",
-					"sid": 989655183925146,
-					"behaviorType": "Solid",
+					"sid": 905446949086476,
 					"parameters": {
-						"state": "disabled"
-					}
-				},
-				{
-					"id": "set-default-color",
-					"objectClass": "Door",
-					"sid": 197293543203538,
-					"parameters": {
-						"color": "rgbEx(0, 100, 0)"
+						"instance-variable": "Open",
+						"value": "true"
 					}
 				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 968554149815265,
+					"sid": 680758230038477,
 					"parameters": {
-						"audio-file": "achievement-mp3-sound",
+						"audio-file": "scp-door-opening",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Door",
+					"sid": 425854118530307,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "1920",
+						"end-y": "240",
+						"time": "1.5",
+						"ease": "easeinoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
@@ -1270,107 +1459,70 @@
 				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "Interactable",
-					"sid": 724856832197163,
+					"sid": 194275542495410,
 					"parameters": {
 						"object": "Area"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "is-enabled",
-					"objectClass": "Door",
-					"sid": 125064905313966,
-					"behaviorType": "Solid",
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "Door",
-					"sid": 395301043330470,
-					"behaviorType": "Solid",
-					"parameters": {
-						"state": "enabled"
 					}
 				},
 				{
-					"id": "set-default-color",
+					"id": "is-boolean-instance-variable-set",
 					"objectClass": "Door",
-					"sid": 957621187695673,
+					"sid": 981532207645378,
 					"parameters": {
-						"color": "rgbEx(100, 0, 0)"
+						"instance-variable": "Open"
 					}
-				}
-			],
-			"sid": 607409102964532
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Flashlight",
-					"sid": 326647472064442,
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 416200478320001,
 					"parameters": {
-						"object": "Interactable"
+						"variable": "Picked"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-enabled",
-					"objectClass": "Interactable",
-					"sid": 361571604829732,
-					"behaviorType": "ShadowCaster",
+					"id": "set-boolean-instvar",
+					"objectClass": "Door",
+					"sid": 802641759554334,
 					"parameters": {
-						"state": "enabled"
+						"instance-variable": "Open",
+						"value": "false"
 					}
 				},
 				{
-					"id": "set-default-color",
-					"objectClass": "Interactable",
-					"sid": 936634537551343,
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 581109868951706,
 					"parameters": {
-						"color": "rgbEx(100, 100, 100)"
-					}
-				}
-			],
-			"sid": 395872656333008
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Flashlight",
-					"sid": 624225010391434,
-					"parameters": {
-						"object": "Interactable"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "Interactable",
-					"sid": 200544501945891,
-					"behaviorType": "ShadowCaster",
-					"parameters": {
-						"state": "disabled"
+						"audio-file": "scp-door-opening",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
 					}
 				},
 				{
-					"id": "set-default-color",
-					"objectClass": "Interactable",
-					"sid": 359549230712556,
+					"id": "tween-two-properties",
+					"objectClass": "Door",
+					"sid": 994502888355816,
+					"behaviorType": "Tween",
 					"parameters": {
-						"color": "rgbEx(10, 10, 10)"
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "1920",
+						"end-y": "540",
+						"time": "1.5",
+						"ease": "easeinoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
-			"sid": 568965911221979
+			"sid": 580883963860747
 		},
 		{
 			"eventType": "block",
@@ -1472,11 +1624,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 457882782486651,
+					"sid": 892147602030616,
 					"parameters": {
 						"audio-file": "flashlight-click",
 						"loop": "not-looping",
-						"volume": "-5",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}

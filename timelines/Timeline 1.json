@@ -6,7 +6,7 @@
 	"ease": "default",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 0,
+	"playheadTime": 0.1,
 	"totalTime": 5,
 	"stepTime": 0.1,
 	"useStepTime": true,
@@ -93,9 +93,9 @@
 							"resultMode": "default",
 							"ease": "default",
 							"pathMode": "none",
-							"value": "E to Interact\nF to use Flashlight",
-							"rValue": "E to Interact\nF to use Flashlight",
-							"aValue": "E to Interact\nF to use Flashlight",
+							"value": "LMB to Interact\nF to use Flashlight",
+							"rValue": "LMB to Interact\nF to use Flashlight",
+							"aValue": "LMB to Interact\nF to use Flashlight",
 							"addons": []
 						},
 						{

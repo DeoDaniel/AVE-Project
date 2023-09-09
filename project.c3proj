@@ -168,7 +168,8 @@
 			"SpeechSynthesis",
 			"Audio",
 			"GameOver",
-			"ProgressBar"
+			"HealthBar",
+			"StaminaBar"
 		],
 		"subfolders": []
 	},
@@ -233,6 +234,22 @@
 					"name": "achievement-mp3-sound.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 933304179750539,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "game_over.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 141859800415040,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "scp-door-opening.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 137660485519319,
 					"file-info": {
 						"purpose": "none"
 					}
