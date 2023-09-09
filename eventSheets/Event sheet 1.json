@@ -93,6 +93,15 @@
 					}
 				},
 				{
+					"id": "set-position",
+					"objectClass": "SpriteFont",
+					"sid": 745244558654380,
+					"parameters": {
+						"x": "60",
+						"y": "490"
+					}
+				},
+				{
 					"id": "typewriter-text",
 					"objectClass": "SpriteFont",
 					"sid": 576368605492437,
@@ -104,14 +113,14 @@
 				{
 					"id": "speak-text",
 					"objectClass": "SpeechSynthesis",
-					"sid": 389175588831429,
+					"sid": 183960800296886,
 					"parameters": {
 						"text": "\"Welcome to AVE\"",
 						"language": "\"en-US\"",
 						"voice-uri": "\"\"",
 						"volume": "0",
 						"rate": "1",
-						"pitch": "0"
+						"pitch": "2"
 					}
 				},
 				{
@@ -134,14 +143,14 @@
 				{
 					"id": "speak-text",
 					"objectClass": "SpeechSynthesis",
-					"sid": 109378326922481,
+					"sid": 234427704599386,
 					"parameters": {
 						"text": "\"WASD to move, Shift to dash, E to interact, F to use flashlight. Disclaimer: This game is still in Alpha\"",
 						"language": "\"en-US\"",
 						"voice-uri": "\"\"",
 						"volume": "0",
 						"rate": "1",
-						"pitch": "0"
+						"pitch": "2"
 					}
 				}
 			],
@@ -248,6 +257,65 @@
 			],
 			"actions": [
 				{
+					"id": "add-to-instvar",
+					"objectClass": "Player",
+					"sid": 416470267252729,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-25"
+					}
+				},
+				{
+					"id": "set-progress",
+					"objectClass": "ProgressBar",
+					"sid": 636887905148030,
+					"parameters": {
+						"value": "Player.Health"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Player",
+					"sid": 507228484192089,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 352021652836088,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Player",
+					"sid": 986624957455557,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 473587202985510
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 661823480218285,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
 					"id": "stop",
 					"objectClass": "Sprite",
 					"sid": 905176065546985,
@@ -284,9 +352,18 @@
 					"objectClass": "GameOver",
 					"sid": 661140831661979,
 					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-layer-background-color",
+					"objectClass": "System",
+					"sid": 668841191141638,
+					"parameters": {
+						"layer": "0",
+						"color": "rgbEx(15, 0, 0)"
+					}
 				}
 			],
-			"sid": 473587202985510
+			"sid": 944287019561063
 		},
 		{
 			"eventType": "block",
@@ -1287,9 +1364,9 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "Interactable",
-					"sid": 125347144769038,
+					"sid": 359549230712556,
 					"parameters": {
-						"color": "rgbEx(25, 25, 25)"
+						"color": "rgbEx(10, 10, 10)"
 					}
 				}
 			],
@@ -1354,9 +1431,9 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "Sprite",
-					"sid": 128173166721031,
+					"sid": 995772404965254,
 					"parameters": {
-						"color": "rgbEx(25, 25, 25)"
+						"color": "rgbEx(10, 10, 10)"
 					}
 				}
 			],
@@ -1511,9 +1588,60 @@
 					"parameters": {
 						"opacity": "25"
 					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "SpriteFont",
+					"sid": 840756881780709,
+					"parameters": {
+						"x": "60",
+						"y": "980"
+					}
 				}
 			],
 			"sid": 959386257341071
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Sprite",
+					"sid": 923642216270777
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Door2",
+					"sid": 894369766742136,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Door2",
+					"sid": 584933701950953,
+					"parameters": {
+						"color": "rgbEx(0, 100, 0)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 380201735803608,
+					"parameters": {
+						"audio-file": "achievement-mp3-sound",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 769905431717414
 		}
 	],
 	"sid": 558909492298727

@@ -26,9 +26,9 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
-							1,
-							1,
-							1,
+							0.25098039215686274,
+							0.25098039215686274,
+							0.25098039215686274,
 							1
 						],
 						"angle": 0,
@@ -291,7 +291,8 @@
 					},
 					"uid": 4,
 					"instanceVariables": {
-						"Room": 0
+						"Room": 0,
+						"Health": 100
 					},
 					"behaviors": {
 						"8Direction": {
@@ -580,7 +581,7 @@
 					"behaviors": {
 						"Solid": {
 							"properties": {
-								"enabled": false,
+								"enabled": true,
 								"tags": ""
 							}
 						}
@@ -593,8 +594,8 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
-							0,
 							1,
+							0,
 							0,
 							0.5
 						],
@@ -660,6 +661,44 @@
 						"angle": 0.2617993877991494,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "ProgressBar",
+					"properties": {
+						"value": 100,
+						"maximum": 100,
+						"tooltip": "Health Bar",
+						"initially-visible": true,
+						"id": "",
+						"class": ""
+					},
+					"uid": 22,
+					"instanceVariables": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "window-right",
+								"bottom-edge": "window-bottom",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 20,
+						"y": 1020,
+						"width": 500,
+						"height": 50,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
 				}
 			],
 			"sid": 945870727635333,
@@ -673,9 +712,9 @@
 				1
 			],
 			"backgroundColor": [
+				0.058823529411764705,
+				0.058823529411764705,
 				0.09803921568627451,
-				0.09803921568627451,
-				0.13725490196078433,
 				1
 			],
 			"isTransparent": false,
