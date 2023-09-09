@@ -3,17 +3,27 @@
 	"plugin-id": "Sprite",
 	"sid": 792667009531476,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Room",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 564229484952174
+		},
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 729401713437292
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "EightDir",
 			"name": "8Direction",
 			"sid": 266410544150608
-		},
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 374407450560219
 		},
 		{
 			"behaviorId": "LOS",
@@ -56,7 +66,38 @@
 						"imagePoints": [
 							{
 								"name": "Image Point 1",
-								"x": 1.1111111111111112,
+								"x": 1,
+								"y": 0.47619047619047616
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 27,
+						"height": 42,
+						"originX": 0.37037037037037035,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9821091,
+						"collisionPoly": {
+							"points": [
+								0.5421296296296294,
+								0.961309523809524,
+								0.20370370370370366,
+								0.961309523809524,
+								0.19907407407407413,
+								0.031249999999999997,
+								0.5328703703703707,
+								0.031249999999999976
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 1,
 								"y": 0.47619047619047616
 							}
 						],
@@ -69,7 +110,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []
