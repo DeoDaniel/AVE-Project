@@ -113,18 +113,14 @@
 				{
 					"id": "speak-text",
 					"objectClass": "SpeechSynthesis",
-<<<<<<< Updated upstream
-					"sid": 183960800296886,
-=======
 					"sid": 378204452094274,
->>>>>>> Stashed changes
 					"parameters": {
 						"text": "\"Welcome to AVE\"",
 						"language": "\"en-US\"",
 						"voice-uri": "\"\"",
 						"volume": "-5",
 						"rate": "1",
-						"pitch": "2"
+						"pitch": "0"
 					}
 				},
 				{
@@ -147,18 +143,14 @@
 				{
 					"id": "speak-text",
 					"objectClass": "SpeechSynthesis",
-<<<<<<< Updated upstream
-					"sid": 234427704599386,
-=======
 					"sid": 222868137811363,
->>>>>>> Stashed changes
 					"parameters": {
 						"text": "\"WASD to move, Shift to dash, Left Click to interact, F to use flashlight. Disclaimer: This game is still in Alpha\"",
 						"language": "\"en-US\"",
 						"voice-uri": "\"\"",
 						"volume": "-5",
 						"rate": "1",
-						"pitch": "2"
+						"pitch": "0"
 					}
 				}
 			],
