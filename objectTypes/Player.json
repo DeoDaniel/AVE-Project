@@ -12,11 +12,11 @@
 			"sid": 564229484952174
 		},
 		{
-			"name": "Health",
-			"type": "number",
+			"name": "Dash",
+			"type": "boolean",
 			"desc": "",
 			"show": true,
-			"sid": 729401713437292
+			"sid": 381126216772701
 		}
 	],
 	"behaviorTypes": [

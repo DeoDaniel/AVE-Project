@@ -384,6 +384,14 @@
 					"objectClass": "Player",
 					"sid": 338493334153640,
 					"behaviorType": "8Direction"
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player",
+					"sid": 421218251576273,
+					"parameters": {
+						"instance-variable": "Dash"
+					}
 				}
 			],
 			"actions": [
@@ -435,24 +443,101 @@
 					}
 				},
 				{
-					"id": "subtract-from-instvar",
-					"objectClass": "StaminaBar",
-					"sid": 650385748936713,
-					"parameters": {
-						"instance-variable": "Stamina",
-						"value": "10"
-					}
-				},
-				{
 					"id": "set-progress",
 					"objectClass": "StaminaBar",
-					"sid": 188072144138424,
+					"sid": 961650736900885,
 					"parameters": {
-						"value": "StaminaBar.Stamina"
+						"value": "StaminaBar.Progress-100"
 					}
 				}
 			],
 			"sid": 535050511998491
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-progress",
+					"objectClass": "StaminaBar",
+					"sid": 206301276721133,
+					"parameters": {
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 561206237441555,
+					"parameters": {
+						"instance-variable": "Dash",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 605587166188704
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-progress",
+					"objectClass": "StaminaBar",
+					"sid": 814942249840022,
+					"parameters": {
+						"comparison": 1,
+						"value": "300"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player",
+					"sid": 159294944969155,
+					"parameters": {
+						"instance-variable": "Dash"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-progress",
+					"objectClass": "StaminaBar",
+					"sid": 839293945225541,
+					"parameters": {
+						"value": "StaminaBar.Progress+1"
+					}
+				}
+			],
+			"sid": 912872468709697
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-progress",
+					"objectClass": "StaminaBar",
+					"sid": 958029141373757,
+					"parameters": {
+						"comparison": 0,
+						"value": "300"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 164811639259485,
+					"parameters": {
+						"instance-variable": "Dash",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 381505114895346
 		},
 		{
 			"eventType": "block",
@@ -781,20 +866,18 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Player",
-					"sid": 838947482751986,
-					"parameters": {
-						"instance-variable": "Health",
-						"value": "25"
-					}
+					"id": "stop",
+					"objectClass": "Sprite",
+					"sid": 335628631163986,
+					"behaviorType": "Pathfinding"
 				},
 				{
-					"id": "set-progress",
-					"objectClass": "HealthBar",
-					"sid": 636887905148030,
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 908769180830599,
+					"behaviorType": "Pathfinding",
 					"parameters": {
-						"value": "Player.Health"
+						"set": "disabled"
 					}
 				},
 				{
@@ -814,55 +897,14 @@
 					}
 				},
 				{
-					"id": "set-animation-frame",
-					"objectClass": "Player",
-					"sid": 986624957455557,
-					"parameters": {
-						"frame-number": "0"
-					}
-				}
-			],
-			"sid": 473587202985510
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 661823480218285,
-					"parameters": {
-						"instance-variable": "Health",
-						"comparison": 3,
-						"value": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Sprite",
-					"sid": 905176065546985,
-					"behaviorType": "Pathfinding"
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 469735321433354,
-					"behaviorType": "Pathfinding",
-					"parameters": {
-						"set": "disabled"
-					}
-				},
-				{
 					"id": "destroy",
 					"objectClass": "Player",
-					"sid": 678334849817707
+					"sid": 986793769932991
 				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 548763723108175,
+					"sid": 996674986669355,
 					"parameters": {
 						"audio-file": "game_over",
 						"loop": "not-looping",
@@ -874,28 +916,20 @@
 				{
 					"id": "start-fade",
 					"objectClass": "GameOver",
-					"sid": 661140831661979,
+					"sid": 749353728681030,
 					"behaviorType": "Fade"
 				},
 				{
 					"id": "set-layer-background-color",
 					"objectClass": "System",
-					"sid": 668841191141638,
+					"sid": 648354614091687,
 					"parameters": {
 						"layer": "0",
 						"color": "rgbEx(15, 0, 0)"
 					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "HealthBar",
-					"sid": 806915664913975,
-					"parameters": {
-						"visibility": "invisible"
-					}
 				}
 			],
-			"sid": 944287019561063
+			"sid": 473587202985510
 		},
 		{
 			"eventType": "block",
@@ -1427,7 +1461,7 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Door",
-					"sid": 425854118530307,
+					"sid": 620538419537198,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
@@ -1435,7 +1469,7 @@
 						"end-x": "1920",
 						"end-y": "240",
 						"time": "1.5",
-						"ease": "easeinoutsine",
+						"ease": "easeinoutquad",
 						"destroy-on-complete": "no",
 						"loop": "no",
 						"ping-pong": "no",
@@ -1498,7 +1532,7 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Door",
-					"sid": 994502888355816,
+					"sid": 233722421421751,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
@@ -1506,7 +1540,7 @@
 						"end-x": "1920",
 						"end-y": "540",
 						"time": "1.5",
-						"ease": "easeinoutsine",
+						"ease": "easeinoutquad",
 						"destroy-on-complete": "no",
 						"loop": "no",
 						"ping-pong": "no",

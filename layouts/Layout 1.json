@@ -180,7 +180,7 @@
 					"behaviors": {
 						"Pathfinding": {
 							"properties": {
-								"cell-size": 15,
+								"cell-size": 25,
 								"cell-border": 5,
 								"obstacles": "solids",
 								"max-speed": 600,
@@ -237,7 +237,7 @@
 					"behaviors": {
 						"Pathfinding": {
 							"properties": {
-								"cell-size": 15,
+								"cell-size": 25,
 								"cell-border": 5,
 								"obstacles": "solids",
 								"max-speed": 600,
@@ -292,7 +292,7 @@
 					"uid": 4,
 					"instanceVariables": {
 						"Room": 0,
-						"Health": 100
+						"Dash": true
 					},
 					"behaviors": {
 						"8Direction": {
@@ -598,44 +598,6 @@
 					}
 				},
 				{
-					"type": "HealthBar",
-					"properties": {
-						"value": 100,
-						"maximum": 100,
-						"tooltip": "Health Bar",
-						"initially-visible": true,
-						"id": "",
-						"class": ""
-					},
-					"uid": 22,
-					"instanceVariables": {},
-					"behaviors": {
-						"Anchor": {
-							"properties": {
-								"left-edge": "window-left",
-								"top-edge": "window-top",
-								"right-edge": "window-right",
-								"bottom-edge": "window-bottom",
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 20,
-						"y": 1020,
-						"width": 400,
-						"height": 50,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
-				},
-				{
 					"type": "Wall",
 					"properties": {
 						"initially-visible": true,
@@ -710,17 +672,15 @@
 				{
 					"type": "StaminaBar",
 					"properties": {
-						"value": 100,
-						"maximum": 100,
+						"value": 300,
+						"maximum": 300,
 						"tooltip": "Health Bar",
 						"initially-visible": true,
 						"id": "",
 						"class": ""
 					},
 					"uid": 23,
-					"instanceVariables": {
-						"Stamina": 40
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"Anchor": {
 							"properties": {
@@ -734,7 +694,7 @@
 					},
 					"world": {
 						"x": 20,
-						"y": 960,
+						"y": 1020,
 						"width": 400,
 						"height": 50,
 						"originX": 0,
@@ -772,6 +732,79 @@
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": true,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Layer 1",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 22,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"Bulge": {
+							"isEnabled": true,
+							"parameters": {
+								"radius": 1,
+								"scale": 0.25
+							}
+						}
+					},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1920,
+						"height": 1080,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							0.15
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "additive"
+					}
+				}
+			],
+			"sid": 288842773714617,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": false

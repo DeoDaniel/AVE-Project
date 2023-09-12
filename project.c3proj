@@ -141,6 +141,13 @@
 		},
 		{
 			"type": "effect",
+			"id": "bulge",
+			"name": "Bulge",
+			"author": "Brad Larson",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "softlight",
 			"name": "Soft light",
 			"author": "Scirra",
@@ -168,8 +175,8 @@
 			"SpeechSynthesis",
 			"Audio",
 			"GameOver",
-			"HealthBar",
-			"StaminaBar"
+			"StaminaBar",
+			"Sprite2"
 		],
 		"subfolders": []
 	},
@@ -218,14 +225,6 @@
 					"name": "woosh-sound-effect.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 949726620777800,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "emotional-damage-meme.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 349262146029235,
 					"file-info": {
 						"purpose": "none"
 					}
