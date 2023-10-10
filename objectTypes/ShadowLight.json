@@ -11,5 +11,14 @@
 			"sid": 513289619082867
 		}
 	],
-	"effectTypes": []
+	"effectTypes": [
+		{
+			"effectId": "colorblend",
+			"name": "Color"
+		},
+		{
+			"effectId": "multiply",
+			"name": "Multiply"
+		}
+	]
 }

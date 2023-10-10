@@ -27,24 +27,64 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 981253765863949
+					"sid": 950686764755650
+				}
+			],
+			"actions": [],
+			"sid": 117859458483904,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 540572744791381,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-toward-position",
+							"objectClass": "Player",
+							"sid": 133549935814778,
+							"parameters": {
+								"degrees": "15",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 633070873490218
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 744700071653393
+						}
+					],
+					"actions": [],
+					"sid": 317799439249763
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 324775502900151
 				}
 			],
 			"actions": [
 				{
 					"id": "rotate-toward-position",
-					"objectClass": "Player",
-					"sid": 914303535090631,
-					"parameters": {
-						"degrees": "15",
-						"x": "Mouse.X",
-						"y": "Mouse.Y"
-					}
-				},
-				{
-					"id": "rotate-toward-position",
 					"objectClass": "Sprite",
-					"sid": 281323606845517,
+					"sid": 554384074955930,
 					"parameters": {
 						"degrees": "5",
 						"x": "Player.X",
@@ -52,7 +92,7 @@
 					}
 				}
 			],
-			"sid": 684779841357073
+			"sid": 989797369882040
 		},
 		{
 			"eventType": "block",
@@ -87,6 +127,21 @@
 						"pin-to": "Player",
 						"image-point": "0",
 						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "Info",
+					"sid": 436758510022372,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "Interactable",
+						"x": true,
+						"y": false,
+						"angle": false,
 						"width-type": "no",
 						"height-type": "no",
 						"z": false
@@ -169,95 +224,133 @@
 					}
 				},
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 342621521753147,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 435131097538709,
 					"parameters": {
-						"variable": "Picked"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "has-los-to-object",
-					"objectClass": "Player",
-					"sid": 946360016140149,
-					"behaviorType": "LineOfSight",
-					"parameters": {
-						"object": "Interactable",
-						"image-point": "0"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "is-on-screen",
-					"objectClass": "Player",
-					"sid": 821314225263278
-				}
-			],
-			"actions": [
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Player",
-					"sid": 549145225446128,
-					"parameters": {
-						"object": "bullet",
-						"layer": "0",
-						"image-point": "0",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "move-to-bottom",
-					"objectClass": "bullet",
-					"sid": 711689373334148
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "bullet",
-					"sid": 265554309738732,
-					"parameters": {
-						"scale": "0.02"
-					}
-				},
-				{
-					"id": "set-width",
-					"objectClass": "bullet",
-					"sid": 141898338451801,
-					"parameters": {
-						"width": "2000"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "bullet",
-					"sid": 732311458755617,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetHeight",
-						"end-value": "0",
-						"time": "0.2",
-						"ease": "default",
-						"destroy-on-complete": "yes",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 320989592271365,
-					"parameters": {
-						"audio-file": "pew-pew-lame-sound-effect",
-						"loop": "not-looping",
-						"volume": "-10",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
+						"gamepad": "0",
+						"button": "right-shoulder-trigger"
 					}
 				}
 			],
-			"sid": 126326183998964
+			"actions": [],
+			"sid": 126326183998964,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 342621521753147,
+							"parameters": {
+								"variable": "Picked"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "has-los-to-object",
+							"objectClass": "Player",
+							"sid": 946360016140149,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Interactable",
+								"image-point": "0"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Player",
+							"sid": 821314225263278
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player",
+							"sid": 291450219901074,
+							"parameters": {
+								"instance-variable": "Equipped"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 549145225446128,
+							"parameters": {
+								"object": "bullet",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "bullet",
+							"sid": 711689373334148
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "bullet",
+							"sid": 265554309738732,
+							"parameters": {
+								"scale": "0.02"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "bullet",
+							"sid": 141898338451801,
+							"parameters": {
+								"width": "2000"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "bullet",
+							"sid": 732311458755617,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "0",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 320989592271365,
+							"parameters": {
+								"audio-file": "pew-pew-lame-sound-effect",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 483090031491121,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "50",
+								"weak-magnitude": "100",
+								"strong-magnitude": "100"
+							}
+						}
+					],
+					"sid": 475783822967678
+				}
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -268,6 +361,17 @@
 					"sid": 592491179189076,
 					"parameters": {
 						"key": 87
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 328291435312722,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 2,
+						"value": "-50"
 					}
 				}
 			],
@@ -282,7 +386,8 @@
 					}
 				}
 			],
-			"sid": 810487391566517
+			"sid": 810487391566517,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -293,6 +398,17 @@
 					"sid": 572573939959756,
 					"parameters": {
 						"key": 83
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 574306028645494,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 4,
+						"value": "50"
 					}
 				}
 			],
@@ -307,7 +423,8 @@
 					}
 				}
 			],
-			"sid": 330360019498722
+			"sid": 330360019498722,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -318,6 +435,17 @@
 					"sid": 618198991512988,
 					"parameters": {
 						"key": 65
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 148381701887452,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-x-axis",
+						"comparison": 2,
+						"value": "-50"
 					}
 				}
 			],
@@ -332,7 +460,8 @@
 					}
 				}
 			],
-			"sid": 298889221412883
+			"sid": 298889221412883,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -343,6 +472,17 @@
 					"sid": 455381995067957,
 					"parameters": {
 						"key": 68
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 496162511190788,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-x-axis",
+						"comparison": 4,
+						"value": "50"
 					}
 				}
 			],
@@ -357,7 +497,8 @@
 					}
 				}
 			],
-			"sid": 704364792941910
+			"sid": 704364792941910,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -642,6 +783,14 @@
 							"parameters": {
 								"max-speed": "300"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Info",
+							"sid": 838147969396553,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 702542140058047
@@ -812,6 +961,14 @@
 					"parameters": {
 						"blend-mode": "additive"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Info",
+					"sid": 750869909512591,
+					"parameters": {
+						"visibility": "visible"
+					}
 				}
 			],
 			"sid": 708108167234569
@@ -847,6 +1004,14 @@
 					"sid": 277130812721689,
 					"parameters": {
 						"blend-mode": "normal"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Info",
+					"sid": 759629455901004,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				}
 			],
@@ -1740,10 +1905,10 @@
 				{
 					"id": "typewriter-text",
 					"objectClass": "SpriteFont",
-					"sid": 361518613450546,
+					"sid": 994597735803605,
 					"parameters": {
 						"text": "SpriteFont.Text",
-						"duration": "1"
+						"duration": "2"
 					}
 				}
 			],
@@ -1820,6 +1985,151 @@
 				}
 			],
 			"sid": 769905431717414
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-pinned",
+					"objectClass": "Info",
+					"sid": 959452651055876,
+					"behaviorType": "Pin"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "Info",
+					"sid": 110404940004366,
+					"parameters": {
+						"y": "Interactable.Y + 90"
+					}
+				}
+			],
+			"sid": 559687749727871
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Player",
+					"sid": 434984553403537,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Gun",
+						"image-point": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-blend-mode",
+					"objectClass": "Gun",
+					"sid": 548944632574597,
+					"parameters": {
+						"blend-mode": "additive"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Info2",
+					"sid": 755136903160455,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 365761334278502
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Player",
+					"sid": 694752865376263,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Gun",
+						"image-point": "0"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-blend-mode",
+					"objectClass": "Gun",
+					"sid": 450376400296472,
+					"parameters": {
+						"blend-mode": "normal"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Info2",
+					"sid": 616222981608463,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 285213288250436
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 452927694222392,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Player",
+					"sid": 669941355678444,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Gun",
+						"image-point": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Gun",
+					"sid": 202148257655096
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Info2",
+					"sid": 369240723768418
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 248434444497582,
+					"parameters": {
+						"instance-variable": "Equipped",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Player",
+					"sid": 631263298031142,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 985464832534213
 		}
 	],
 	"sid": 558909492298727

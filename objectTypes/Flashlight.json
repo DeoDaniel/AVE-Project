@@ -21,8 +21,12 @@
 	],
 	"effectTypes": [
 		{
-			"effectId": "softlight",
-			"name": "SoftLight"
+			"effectId": "blurhorizontal",
+			"name": "BlurHorizontal"
+		},
+		{
+			"effectId": "lighten",
+			"name": "Lighten"
 		}
 	],
 	"animations": {
@@ -49,7 +53,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 635590113727690,

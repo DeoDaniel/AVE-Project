@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 35000,
+	"savedWithRelease": 35800,
 	"name": "AVE (prototype)",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -50,8 +50,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Timeline",
 			"name": "Timeline controller",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -141,15 +155,29 @@
 		},
 		{
 			"type": "effect",
-			"id": "bulge",
-			"name": "Bulge",
-			"author": "Brad Larson",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "effect",
-			"id": "softlight",
-			"name": "Soft light",
+			"id": "colorblend",
+			"name": "Color",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "lighten",
+			"name": "Lighten",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "multiply",
+			"name": "Multiply",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -176,7 +204,10 @@
 			"Audio",
 			"GameOver",
 			"StaminaBar",
-			"Sprite2"
+			"Gamepad",
+			"Info",
+			"Gun",
+			"Info2"
 		],
 		"subfolders": []
 	},

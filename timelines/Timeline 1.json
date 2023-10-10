@@ -6,8 +6,8 @@
 	"ease": "default",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 0.1,
-	"totalTime": 5,
+	"playheadTime": 6,
+	"totalTime": 9,
 	"stepTime": 0.1,
 	"useStepTime": true,
 	"showingInterpolationModes": false,
@@ -56,7 +56,14 @@
 					"pathMode": "default"
 				},
 				{
-					"time": 5,
+					"time": 5.7,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				},
+				{
+					"time": 9,
 					"tags": "",
 					"enabled": true,
 					"ease": "default",
@@ -71,7 +78,7 @@
 						"uid": "Spritefont2"
 					},
 					"enabled": true,
-					"interpolationMode": "step",
+					"interpolationMode": "default",
 					"resultMode": "default",
 					"ease": "default",
 					"pathMode": "none",
@@ -82,9 +89,9 @@
 							"resultMode": "default",
 							"ease": "default",
 							"pathMode": "none",
-							"value": "WASD to move\nShift to dash",
-							"rValue": "WASD to move\nShift to dash",
-							"aValue": "WASD to move\nShift to dash",
+							"value": "(WASD) to move\n(Shift) to dash",
+							"rValue": "(WASD) to move\n(Shift) to dash",
+							"aValue": "(WASD) to move\n(Shift) to dash",
 							"addons": []
 						},
 						{
@@ -93,13 +100,24 @@
 							"resultMode": "default",
 							"ease": "default",
 							"pathMode": "none",
-							"value": "LMB to Interact\nF to use Flashlight",
-							"rValue": "LMB to Interact\nF to use Flashlight",
-							"aValue": "LMB to Interact\nF to use Flashlight",
+							"value": "(LMB) to interact\n(F) to use flashlight",
+							"rValue": "(LMB) to interact\n(F) to use flashlight",
+							"aValue": "(LMB) to interact\n(F) to use flashlight",
 							"addons": []
 						},
 						{
-							"time": 5,
+							"time": 5.7,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "DISCLAIMER:\nThis game is still in Alpha!",
+							"rValue": "DISCLAIMER:\nThis game is still in Alpha!",
+							"aValue": "DISCLAIMER:\nThis game is still in Alpha!",
+							"addons": []
+						},
+						{
+							"time": 9,
 							"enabled": true,
 							"resultMode": "default",
 							"ease": "default",

@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Area",
+					"type": "Gun",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -15,20 +15,20 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 9,
+					"uid": 25,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 621,
-						"y": 501,
-						"width": 188.67071933284996,
-						"height": 188.67071933284996,
+						"x": 2880,
+						"y": 539,
+						"width": 116,
+						"height": 82,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.4878048780487805,
 						"color": [
-							0.39215686274509803,
-							0.39215686274509803,
-							0.39215686274509803,
+							1,
+							1,
+							1,
 							1
 						],
 						"angle": 0,
@@ -59,9 +59,19 @@
 							}
 						}
 					},
+					"effects": {
+						"Color": {
+							"isEnabled": true,
+							"parameters": {}
+						},
+						"Multiply": {
+							"isEnabled": true,
+							"parameters": {}
+						}
+					},
 					"world": {
 						"x": 621,
-						"y": 500,
+						"y": 540,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
@@ -72,6 +82,35 @@
 							1,
 							0.5
 						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Area",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 9,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 188.67071933284996,
+						"height": 188.67071933284996,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.39215686274509803,
+							0.39215686274509803,
+							0.39215686274509803,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				},
@@ -107,8 +146,8 @@
 						}
 					},
 					"world": {
-						"x": 1613,
-						"y": 523,
+						"x": 300,
+						"y": 540,
 						"width": 80,
 						"height": 80,
 						"originX": 0.5,
@@ -144,14 +183,20 @@
 						}
 					},
 					"effects": {
-						"SoftLight": {
+						"BlurHorizontal": {
 							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"Lighten": {
+							"isEnabled": false,
 							"parameters": {}
 						}
 					},
 					"world": {
 						"x": 626,
-						"y": 494,
+						"y": 540,
 						"width": 750,
 						"height": 250,
 						"originX": 0,
@@ -160,7 +205,7 @@
 							1,
 							1,
 							1,
-							0.5
+							0.15
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -207,7 +252,7 @@
 						}
 					},
 					"world": {
-						"x": 3356,
+						"x": 5000,
 						"y": 257,
 						"width": 50,
 						"height": 100,
@@ -264,7 +309,7 @@
 						}
 					},
 					"world": {
-						"x": 3353,
+						"x": 5000,
 						"y": 821,
 						"width": 50,
 						"height": 100,
@@ -292,7 +337,8 @@
 					"uid": 4,
 					"instanceVariables": {
 						"Room": 0,
-						"Dash": true
+						"Dash": true,
+						"Equipped": false
 					},
 					"behaviors": {
 						"8Direction": {
@@ -323,60 +369,11 @@
 					},
 					"world": {
 						"x": 613.0838883509892,
-						"y": 496.473058266195,
+						"y": 539.973,
 						"width": 86.30424750211645,
 						"height": 134.25105166995894,
 						"originX": 0.37037037037037035,
 						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "AVE Alpha v0.1",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 2.25,
-						"character-spacing": 0,
-						"line-height": 10,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 11,
-					"instanceVariables": {},
-					"behaviors": {
-						"Anchor": {
-							"properties": {
-								"left-edge": "window-left",
-								"top-edge": "none",
-								"right-edge": "window-right",
-								"bottom-edge": "window-bottom",
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 60,
-						"y": 980,
-						"width": 1800,
-						"height": 100,
-						"originX": 0,
-						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -539,65 +536,6 @@
 					}
 				},
 				{
-					"type": "GameOver",
-					"properties": {
-						"text": "GAME OVER",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 15,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "center",
-						"read-aloud": false
-					},
-					"uid": 21,
-					"instanceVariables": {},
-					"behaviors": {
-						"Anchor": {
-							"properties": {
-								"left-edge": "window-left",
-								"top-edge": "window-top",
-								"right-edge": "window-right",
-								"bottom-edge": "window-bottom",
-								"enabled": true
-							}
-						},
-						"Fade": {
-							"properties": {
-								"fade-in-time": 3,
-								"wait-time": 0,
-								"fade-out-time": 0,
-								"destroy": false,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 960,
-						"y": 540,
-						"width": 1000,
-						"height": 500,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							0,
-							0,
-							0
-						],
-						"angle": 0.2617993877991494,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Wall",
 					"properties": {
 						"initially-visible": true,
@@ -670,41 +608,103 @@
 					}
 				},
 				{
-					"type": "StaminaBar",
+					"type": "Info",
 					"properties": {
-						"value": 300,
-						"maximum": 300,
-						"tooltip": "Health Bar",
-						"initially-visible": true,
-						"id": "",
-						"class": ""
-					},
-					"uid": 23,
-					"instanceVariables": {},
-					"behaviors": {
-						"Anchor": {
-							"properties": {
-								"left-edge": "window-left",
-								"top-edge": "window-top",
-								"right-edge": "window-right",
-								"bottom-edge": "window-bottom",
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 20,
-						"y": 1020,
-						"width": 400,
-						"height": 50,
-						"originX": 0,
-						"originY": 0,
+						"text": "(LMB) to pick",
+						"enable-bbcode": true,
+						"font": "VCR OSD Mono",
+						"size": 28,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
 						"color": [
 							1,
 							1,
 							1,
 							1
-						]
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 22,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 300,
+						"y": 630,
+						"width": 286,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Info2",
+					"properties": {
+						"text": "(LMB) to equip",
+						"enable-bbcode": true,
+						"font": "VCR OSD Mono",
+						"size": 28,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 26,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 2880,
+						"y": 630,
+						"width": 310,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],
@@ -737,51 +737,148 @@
 			"global": false
 		},
 		{
-			"name": "Layer 1",
+			"name": "GUI",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sprite2",
+					"type": "SpriteFont",
 					"properties": {
+						"text": "AVE Alpha v0.1",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 2.25,
+						"character-spacing": 0,
+						"line-height": 10,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "top-left",
+						"read-aloud": false
 					},
-					"uid": 22,
+					"uid": 11,
 					"instanceVariables": {},
-					"behaviors": {},
-					"effects": {
-						"Bulge": {
-							"isEnabled": true,
-							"parameters": {
-								"radius": 1,
-								"scale": 0.25
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "none",
+								"right-edge": "window-right",
+								"bottom-edge": "window-bottom",
+								"enabled": true
 							}
 						}
 					},
 					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 1920,
-						"height": 1080,
+						"x": 60,
+						"y": 980,
+						"width": 1800,
+						"height": 100,
 						"originX": 0,
 						"originY": 0,
 						"color": [
 							1,
 							1,
 							1,
-							0.15
+							1
 						],
 						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "additive"
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaminaBar",
+					"properties": {
+						"value": 300,
+						"maximum": 300,
+						"tooltip": "Health Bar",
+						"initially-visible": true,
+						"id": "",
+						"class": ""
+					},
+					"uid": 23,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 20,
+						"y": 1010,
+						"width": 400,
+						"height": 50,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "GameOver",
+					"properties": {
+						"text": "GAME OVER",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 15,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "window-right",
+								"bottom-edge": "window-bottom",
+								"enabled": true
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 3,
+								"wait-time": 0,
+								"fade-out-time": 0,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 1000,
+						"height": 500,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							0,
+							0,
+							0
+						],
+						"angle": 0.2617993877991494,
+						"zElevation": 0
 					}
 				}
 			],
-			"sid": 288842773714617,
+			"sid": 466645037220443,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
