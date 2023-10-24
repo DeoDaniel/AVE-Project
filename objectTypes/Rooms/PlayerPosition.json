@@ -1,14 +1,14 @@
 {
-	"name": "Wall",
+	"name": "PlayerPosition",
 	"plugin-id": "Sprite",
-	"sid": 104881535494664,
+	"sid": 247420059502335,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 858979559336336
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 296806624279467
 		}
 	],
 	"effectTypes": [],
@@ -17,32 +17,20 @@
 			{
 				"frames": [
 					{
-						"width": 22,
-						"height": 128,
-						"originX": 0.45454545454545453,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1577297,
-						"collisionPoly": {
-							"points": [
-								0.9545454545454546,
-								0.0234375,
-								0.8636363636363636,
-								0.9921875,
-								0.045454545454545456,
-								0.9765625,
-								0.13636363636363635,
-								0.0078125
-							]
-						},
+						"imageSpriteId": 5159159,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 590599297767149,
+				"sid": 214316396497734,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

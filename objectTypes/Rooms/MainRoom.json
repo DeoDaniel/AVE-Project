@@ -1,7 +1,7 @@
 {
-	"name": "Area",
+	"name": "MainRoom",
 	"plugin-id": "Sprite",
-	"sid": 159187614520690,
+	"sid": 541719334089360,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,32 +11,20 @@
 			{
 				"frames": [
 					{
-						"width": 62,
-						"height": 62,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 250,
+						"height": 250,
+						"originX": 0,
+						"originY": 0,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7253560,
-						"collisionPoly": {
-							"points": [
-								0.016129032258064516,
-								0.016129032258064516,
-								0.9838709677419355,
-								0.016129032258064516,
-								0.9838709677419355,
-								0.9838709677419355,
-								0.016129032258064516,
-								0.9838709677419355
-							]
-						},
+						"imageSpriteId": 7783237,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 919302776481585,
+				"sid": 777085834907495,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

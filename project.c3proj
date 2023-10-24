@@ -209,7 +209,19 @@
 			"Gun",
 			"Info2"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"MainRoom",
+					"Room1",
+					"Room2",
+					"CurrentRoom",
+					"PlayerPosition"
+				],
+				"subfolders": [],
+				"name": "Rooms"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],

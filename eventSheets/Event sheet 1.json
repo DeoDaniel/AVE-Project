@@ -30,7 +30,18 @@
 					"sid": 950686764755650
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-layer-scroll",
+					"objectClass": "System",
+					"sid": 583520366226721,
+					"parameters": {
+						"layer": "0",
+						"scroll-x": "CurrentRoom.ImagePointX(1)",
+						"scroll-y": "CurrentRoom.ImagePointY(1)"
+					}
+				}
+			],
 			"sid": 117859458483904,
 			"children": [
 				{
@@ -64,9 +75,44 @@
 							"id": "has-gamepads",
 							"objectClass": "Gamepad",
 							"sid": 744700071653393
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 126067913054463,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-x-axis",
+								"comparison": 0,
+								"value": "0"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 853168419425910,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-y-axis",
+								"comparison": 0,
+								"value": "0"
+							},
+							"isInverted": true
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "rotate-toward-position",
+							"objectClass": "Player",
+							"sid": 215180802083063,
+							"parameters": {
+								"degrees": "15",
+								"x": "Player.X + Gamepad.Axis(0, 2)",
+								"y": "Player.Y + Gamepad.Axis(0, 3)"
+							}
+						}
+					],
 					"sid": 317799439249763
 				}
 			]
@@ -104,6 +150,21 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "PlayerPosition",
+					"sid": 785476458157523,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "Player",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
 				{
 					"id": "pin-to-object-imagepoint",
 					"objectClass": "ShadowLight",
@@ -226,10 +287,10 @@
 				{
 					"id": "on-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 435131097538709,
+					"sid": 838853516540993,
 					"parameters": {
 						"gamepad": "0",
-						"button": "right-shoulder-trigger"
+						"button": "button-a"
 					}
 				}
 			],
@@ -1205,109 +1266,47 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-on-screen",
-					"objectClass": "Player",
-					"sid": 380638011033097,
-					"isInverted": true
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "Player",
-					"sid": 450364277108097,
+					"id": "is-overlapping-another-object",
+					"objectClass": "MainRoom",
+					"sid": 713291910645828,
 					"parameters": {
-						"comparison": 4,
-						"x-co-ordinate": "1920"
-					}
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "Player",
-					"sid": 630886653692884,
-					"parameters": {
-						"comparison": 3,
-						"x-co-ordinate": "3840"
+						"object": "PlayerPosition"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "Player",
-					"sid": 333100341906093,
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 812889340488120,
+					"behaviorType": "Tween",
 					"parameters": {
-						"instance-variable": "Room",
-						"value": "1"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "MainRoom.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 356058109319267,
-					"behaviorType": "Pathfinding",
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 405625252045962,
+					"behaviorType": "Tween",
 					"parameters": {
-						"set": "enabled"
-					}
-				},
-				{
-					"id": "find-path",
-					"objectClass": "Sprite",
-					"sid": 613490069811645,
-					"behaviorType": "Pathfinding",
-					"parameters": {
-						"x": "Player.X",
-						"y": "Player.Y"
-					}
-				}
-			],
-			"sid": 620642893615102
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 929549234484116,
-					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "1"
-					}
-				},
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 277641991444793
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 443043021919368,
-					"parameters": {
-						"variable": "Scroll",
-						"comparison": 2,
-						"value": "2880"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-scroll",
-					"objectClass": "System",
-					"sid": 225276470781734,
-					"parameters": {
-						"layer": "0",
-						"scroll-x": "LayerScrollX(0)+40",
-						"scroll-y": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 272934090377257,
-					"parameters": {
-						"variable": "Scroll",
-						"value": "LayerScrollX(0)"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "MainRoom.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
@@ -1317,259 +1316,151 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 690790720295935,
+					"id": "is-overlapping-another-object",
+					"objectClass": "Room1",
+					"sid": 129446059033893,
 					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "1"
-					}
-				},
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 829328353859033
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 873987066778645,
-					"parameters": {
-						"variable": "Scroll",
-						"comparison": 4,
-						"value": "2880"
+						"object": "PlayerPosition"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-layer-scroll",
-					"objectClass": "System",
-					"sid": 397067329629956,
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 140044338347896,
+					"behaviorType": "Tween",
 					"parameters": {
-						"layer": "0",
-						"scroll-x": "LayerScrollX(0)-40",
-						"scroll-y": "0"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "Room1.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 704753692571851,
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 316681567323117,
+					"behaviorType": "Tween",
 					"parameters": {
-						"variable": "Scroll",
-						"value": "LayerScrollX(0)"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "MainRoom.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
-			"sid": 379967521786886
+			"sid": 473360601143645
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-on-screen",
-					"objectClass": "Player",
-					"sid": 971963131656835,
-					"isInverted": true
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "Player",
-					"sid": 376882168919482,
+					"id": "is-overlapping-another-object",
+					"objectClass": "Room2",
+					"sid": 797140545665068,
 					"parameters": {
-						"comparison": 3,
-						"x-co-ordinate": "1920"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 178015725283271,
-					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "1"
+						"object": "PlayerPosition"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "Player",
-					"sid": 974319774290965,
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 860741725022819,
+					"behaviorType": "Tween",
 					"parameters": {
-						"instance-variable": "Room",
-						"value": "0"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "Room2.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 576030393195665,
-					"behaviorType": "Pathfinding",
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 946768239105270,
+					"behaviorType": "Tween",
 					"parameters": {
-						"set": "disabled"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "MainRoom.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
-			"sid": 329782909617715
+			"sid": 298570487998200
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 316389969664157,
+					"id": "is-overlapping-another-object",
+					"objectClass": "MainRoom",
+					"sid": 973460578257516,
 					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "0"
-					}
-				},
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 642461766937594
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 830479158255939,
-					"parameters": {
-						"variable": "Scroll",
-						"comparison": 4,
-						"value": "0"
+						"object": "PlayerPosition"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-layer-scroll",
-					"objectClass": "System",
-					"sid": 715512373413580,
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 431253888975639,
+					"behaviorType": "Tween",
 					"parameters": {
-						"layer": "0",
-						"scroll-x": "LayerScrollX(0)-40",
-						"scroll-y": "0"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "MainRoom.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 207241495685412,
+					"id": "tween-one-property",
+					"objectClass": "CurrentRoom",
+					"sid": 556476555165551,
+					"behaviorType": "Tween",
 					"parameters": {
-						"variable": "Scroll",
-						"value": "LayerScrollX(0)"
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "MainRoom.X",
+						"time": "0.5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
-			"sid": 407242416542634
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-on-screen",
-					"objectClass": "Player",
-					"sid": 964922835078390,
-					"isInverted": true
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 812786980832712,
-					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "1"
-					}
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "Player",
-					"sid": 464581837157326,
-					"parameters": {
-						"comparison": 4,
-						"x-co-ordinate": "3840"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player",
-					"sid": 973926056251855,
-					"parameters": {
-						"instance-variable": "Room",
-						"value": "2"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 662705781288336,
-					"behaviorType": "Pathfinding",
-					"parameters": {
-						"set": "disabled"
-					}
-				}
-			],
-			"sid": 370828037871291
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 909586711081124,
-					"parameters": {
-						"instance-variable": "Room",
-						"comparison": 0,
-						"value": "2"
-					}
-				},
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 410242898530523
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 565370295440864,
-					"parameters": {
-						"variable": "Scroll",
-						"comparison": 2,
-						"value": "5760"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-scroll",
-					"objectClass": "System",
-					"sid": 648273559022981,
-					"parameters": {
-						"layer": "0",
-						"scroll-x": "LayerScrollX(0)+40",
-						"scroll-y": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 708575288198280,
-					"parameters": {
-						"variable": "Scroll",
-						"value": "LayerScrollX(0)"
-					}
-				}
-			],
-			"sid": 844302216098698
+			"sid": 487389953045589
 		},
 		{
 			"eventType": "block",
@@ -1626,13 +1517,13 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Door",
-					"sid": 620538419537198,
+					"sid": 743713789049871,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
-						"end-x": "1920",
-						"end-y": "240",
+						"end-x": "1915",
+						"end-y": "325",
 						"time": "1.5",
 						"ease": "easeinoutquad",
 						"destroy-on-complete": "no",
@@ -1697,12 +1588,12 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Door",
-					"sid": 233722421421751,
+					"sid": 400875034738470,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
-						"end-x": "1920",
+						"end-x": "1915",
 						"end-y": "540",
 						"time": "1.5",
 						"ease": "easeinoutquad",
