@@ -1,11 +1,20 @@
 {
-	"name": "Hotbar",
+	"name": "SmallLighting",
 	"plugin-id": "Sprite",
-	"sid": 911553366914973,
+	"sid": 164066078978928,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
+		},
+		{
+			"effectId": "overlay",
+			"name": "Overlay"
+		}
+	],
 	"animations": {
 		"items": [
 			{
@@ -18,13 +27,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6654,
+						"imageSpriteId": 133579,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 404589562991351,
+				"sid": 853943036903448,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

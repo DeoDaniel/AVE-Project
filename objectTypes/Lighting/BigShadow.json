@@ -1,0 +1,22 @@
+{
+	"name": "BigShadow",
+	"plugin-id": "shadowlight",
+	"sid": 191790511006201,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "colorblend",
+			"name": "Color"
+		},
+		{
+			"effectId": "multiply",
+			"name": "Multiply"
+		},
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
+		}
+	]
+}

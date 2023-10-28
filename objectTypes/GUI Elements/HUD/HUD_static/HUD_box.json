@@ -1,10 +1,16 @@
 {
-	"name": "MainRoom",
+	"name": "HUD_box",
 	"plugin-id": "Sprite",
-	"sid": 541719334089360,
+	"sid": 924196793366549,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 263814053570871
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -13,18 +19,18 @@
 					{
 						"width": 250,
 						"height": 250,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7783237,
+						"imageSpriteId": 9482591,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 777085834907495,
+				"sid": 156061517285959,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "Gun",
+	"name": "Handcanon",
 	"plugin-id": "Sprite",
-	"sid": 895838124492722,
+	"sid": 332570304194705,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2693405,
+						"imageSpriteId": 7204137,
 						"collisionPoly": {
 							"points": [
 								0.1724137931034483,
@@ -48,7 +48,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 207806062407106,
+				"sid": 665208367763765,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

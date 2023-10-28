@@ -1,7 +1,7 @@
 {
-	"name": "Room1",
+	"name": "Room0",
 	"plugin-id": "Sprite",
-	"sid": 987801046465935,
+	"sid": 541719334089360,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,13 +18,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9638508,
+						"imageSpriteId": 5163202,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 131728423851294,
+				"sid": 777085834907495,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

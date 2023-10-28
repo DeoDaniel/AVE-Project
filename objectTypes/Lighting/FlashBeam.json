@@ -1,5 +1,5 @@
 {
-	"name": "Flashlight",
+	"name": "FlashBeam",
 	"plugin-id": "Sprite",
 	"sid": 960788544253931,
 	"isGlobal": false,
@@ -27,6 +27,10 @@
 		{
 			"effectId": "lighten",
 			"name": "Lighten"
+		},
+		{
+			"effectId": "overlay",
+			"name": "Overlay"
 		}
 	],
 	"animations": {

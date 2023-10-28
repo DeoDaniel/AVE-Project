@@ -1,0 +1,24 @@
+{
+	"name": "FlashShadow",
+	"plugin-id": "shadowlight",
+	"sid": 188791515074236,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 513289619082867
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "colorblend",
+			"name": "Color"
+		},
+		{
+			"effectId": "multiply",
+			"name": "Multiply"
+		}
+	]
+}

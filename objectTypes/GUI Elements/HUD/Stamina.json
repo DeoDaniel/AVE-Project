@@ -1,0 +1,23 @@
+{
+	"name": "Stamina",
+	"plugin-id": "Text",
+	"sid": 249714009890317,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Value",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 314240014150619
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 744504284242140
+		}
+	],
+	"effectTypes": []
+}

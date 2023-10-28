@@ -1,16 +1,10 @@
 {
-	"name": "ShadowLight",
+	"name": "SmallShadow",
 	"plugin-id": "shadowlight",
-	"sid": 188791515074236,
+	"sid": 610282015556888,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 513289619082867
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [
 		{
 			"effectId": "colorblend",
@@ -19,6 +13,10 @@
 		{
 			"effectId": "multiply",
 			"name": "Multiply"
+		},
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
 		}
 	]
 }

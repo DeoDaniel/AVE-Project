@@ -1,0 +1,23 @@
+{
+	"name": "Lives",
+	"plugin-id": "Text",
+	"sid": 982090913581987,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Value",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 909939578670133
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 176005789161276
+		}
+	],
+	"effectTypes": []
+}

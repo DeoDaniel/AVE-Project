@@ -57,6 +57,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Timeline",
 			"name": "Timeline controller",
 			"author": "Scirra",
@@ -66,13 +73,6 @@
 			"type": "plugin",
 			"id": "gamepad",
 			"name": "Gamepad",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "progressbar",
-			"name": "Progress bar",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -180,6 +180,20 @@
 			"name": "Multiply",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "overlay",
+			"name": "Overlay",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "radialblur",
+			"name": "Radial blur",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "jylnef8x06j",
@@ -192,34 +206,73 @@
 			"Sprite",
 			"Interactable",
 			"Area",
-			"ShadowLight",
-			"SpriteFont",
 			"Wall",
 			"Door",
-			"Flashlight",
 			"TimelineController",
-			"Door2",
-			"Hotbar",
 			"SpeechSynthesis",
 			"Audio",
-			"GameOver",
-			"StaminaBar",
 			"Gamepad",
-			"Info",
-			"Gun",
-			"Info2"
+			"Table",
+			"Door2",
+			"TiledBackground",
+			"Handcanon",
+			"Tips"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"MainRoom",
+					"Room0",
 					"Room1",
 					"Room2",
 					"CurrentRoom",
-					"PlayerPosition"
+					"PlayerPosition",
+					"Room3",
+					"Room4",
+					"Room5"
 				],
 				"subfolders": [],
 				"name": "Rooms"
+			},
+			{
+				"items": [
+					"Info",
+					"Info2",
+					"GameOver",
+					"DialogueText"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"Stamina",
+							"Weapon",
+							"Lives"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"HUD_box",
+									"HUD_Text"
+								],
+								"subfolders": [],
+								"name": "HUD_static"
+							}
+						],
+						"name": "HUD"
+					}
+				],
+				"name": "GUI Elements"
+			},
+			{
+				"items": [
+					"FlashBeam",
+					"FlashShadow",
+					"BigShadow",
+					"BigLighting",
+					"SmallLighting",
+					"SmallShadow"
+				],
+				"subfolders": [],
+				"name": "Lighting"
 			}
 		]
 	},

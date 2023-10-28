@@ -25,7 +25,7 @@
 		{
 			"type": "instance-track",
 			"worldInstance": 11,
-			"objectType": "SpriteFont",
+			"objectType": "DialogueText",
 			"project": "jylnef8x06j",
 			"enabled": true,
 			"interpolationMode": "default",

@@ -5,13 +5,6 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "Room",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 564229484952174
-		},
-		{
 			"name": "Dash",
 			"type": "boolean",
 			"desc": "",
@@ -24,6 +17,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 979788975311611
+		},
+		{
+			"name": "Using",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 435006455232790
 		}
 	],
 	"behaviorTypes": [
@@ -40,7 +40,12 @@
 		{
 			"behaviorId": "bound",
 			"name": "BoundToLayout",
-			"sid": 852770077100870
+			"sid": 908066496350977
+		},
+		{
+			"behaviorId": "shadowcaster",
+			"name": "ShadowCaster",
+			"sid": 800472490239530
 		}
 	],
 	"effectTypes": [],

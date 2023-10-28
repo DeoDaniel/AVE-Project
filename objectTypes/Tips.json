@@ -1,0 +1,15 @@
+{
+	"name": "Tips",
+	"plugin-id": "Text",
+	"sid": 947540781406101,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 827180336651444
+		}
+	],
+	"effectTypes": []
+}
