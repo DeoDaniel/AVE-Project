@@ -1,39 +1,30 @@
 {
-	"name": "BigLighting",
+	"name": "Sprite2",
 	"plugin-id": "Sprite",
-	"sid": 690389536151519,
+	"sid": 573565749240597,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [
-		{
-			"effectId": "radialblur",
-			"name": "RadialBlur"
-		},
-		{
-			"effectId": "overlay",
-			"name": "Overlay"
-		}
-	],
+	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 202,
-						"height": 202,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 222124,
+						"imageSpriteId": 3777779,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 767619741056820,
+				"sid": 286001674269075,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

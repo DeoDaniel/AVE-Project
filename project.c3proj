@@ -84,6 +84,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "video",
+			"name": "Video",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Anchor",
 			"name": "Anchor",
@@ -203,7 +210,7 @@
 			"Mouse",
 			"Player",
 			"bullet",
-			"Sprite",
+			"Enemy",
 			"Interactable",
 			"Area",
 			"Wall",
@@ -216,7 +223,9 @@
 			"Door2",
 			"TiledBackground",
 			"Handcanon",
-			"Tips"
+			"Tips",
+			"Sprite2",
+			"Video"
 		],
 		"subfolders": [
 			{
@@ -302,14 +311,6 @@
 		"sound": {
 			"items": [
 				{
-					"name": "pew-pew-lame-sound-effect.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 378950154711875,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "flashlight-click.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 506447645147835,
@@ -345,6 +346,14 @@
 					"name": "scp-door-opening.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 137660485519319,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_5.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 715654909832720,
 					"file-info": {
 						"purpose": "none"
 					}
