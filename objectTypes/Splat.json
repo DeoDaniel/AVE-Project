@@ -1,0 +1,63 @@
+{
+	"name": "Splat",
+	"plugin-id": "Sprite",
+	"sid": 279541400943811,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "overlay",
+			"name": "Overlay"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 60,
+						"height": 62,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6791773,
+						"collisionPoly": {
+							"points": [
+								0.016666666666666666,
+								0.03225806451612903,
+								0.8333333333333334,
+								0.03225806451612903,
+								0.8666666666666667,
+								0.06451612903225806,
+								0.95,
+								0.3064516129032258,
+								0.9833333333333333,
+								0.9354838709677419,
+								0.7166666666666667,
+								0.9838709677419355,
+								0.15,
+								0.9354838709677419,
+								0.06666666666666667,
+								0.7580645161290323
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 349815599285029,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

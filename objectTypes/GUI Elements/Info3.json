@@ -1,0 +1,15 @@
+{
+	"name": "Info3",
+	"plugin-id": "Text",
+	"sid": 910180184031619,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 661695577064945
+		}
+	],
+	"effectTypes": []
+}

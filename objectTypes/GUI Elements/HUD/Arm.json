@@ -1,0 +1,75 @@
+{
+	"name": "Arm",
+	"plugin-id": "Sprite",
+	"sid": 558452062010605,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 366652984303847
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 22,
+						"height": 22,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4913673,
+						"collisionPoly": {
+							"points": [
+								0.09090909090909091,
+								0.045454545454545456,
+								0.9545454545454546,
+								0.045454545454545456,
+								0.9545454545454546,
+								0.9090909090909091,
+								0.9090909090909091,
+								0.9545454545454546,
+								0.09090909090909091,
+								0.9545454545454546,
+								0.045454545454545456,
+								0.9090909090909091,
+								0.045454545454545456,
+								0.4090909090909091
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 22,
+						"height": 22,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3425802,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 753693950088787,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

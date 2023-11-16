@@ -19,6 +19,11 @@
 			"behaviorId": "shadowcaster",
 			"name": "ShadowCaster",
 			"sid": 636752984284061
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 226437990651357
 		}
 	],
 	"effectTypes": [],

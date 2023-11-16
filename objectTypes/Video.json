@@ -1,9 +1,20 @@
 {
 	"name": "Video",
 	"plugin-id": "video",
-	"sid": 355278934449396,
+	"sid": 868200186099395,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 951739467969176
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 462556620899551
+		}
+	],
 	"effectTypes": []
 }

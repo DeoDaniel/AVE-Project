@@ -214,17 +214,15 @@
 			"Interactable",
 			"Area",
 			"Wall",
-			"Door",
 			"TimelineController",
 			"SpeechSynthesis",
 			"Audio",
 			"Gamepad",
 			"Table",
-			"Door2",
 			"TiledBackground",
 			"Handcanon",
 			"Tips",
-			"Sprite2",
+			"Splat",
 			"Video"
 		],
 		"subfolders": [
@@ -247,14 +245,17 @@
 					"Info",
 					"Info2",
 					"GameOver",
-					"DialogueText"
+					"DialogueText",
+					"Info3"
 				],
 				"subfolders": [
 					{
 						"items": [
 							"Stamina",
 							"Weapon",
-							"Lives"
+							"Lives",
+							"Arm",
+							"Charge"
 						],
 						"subfolders": [
 							{
@@ -282,6 +283,25 @@
 				],
 				"subfolders": [],
 				"name": "Lighting"
+			},
+			{
+				"items": [
+					"Door",
+					"Door2",
+					"Door3"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"CenterDoor1",
+							"CenterDoor2",
+							"CenterDoor3"
+						],
+						"subfolders": [],
+						"name": "CenterDoor"
+					}
+				],
+				"name": "Doors"
 			}
 		]
 	},
@@ -357,6 +377,38 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "splattt-6295.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 685225506631276,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "alone-atmosphere-23547.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 339269293755878,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "emergency-alarm-with-reverb-29431.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 479493427070913,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "alarm_warning-98864.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 222258131195587,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -366,7 +418,16 @@
 			"subfolders": []
 		},
 		"video": {
-			"items": [],
+			"items": [
+				{
+					"name": "overlay.mp4",
+					"type": "video/mp4",
+					"sid": 966955455342627,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"font": {
