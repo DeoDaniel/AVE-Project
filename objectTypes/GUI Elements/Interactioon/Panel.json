@@ -1,0 +1,103 @@
+{
+	"name": "Panel",
+	"plugin-id": "Sprite",
+	"sid": 567283530310012,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 573866,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Red Input",
+								"x": 0.12,
+								"y": 0.12
+							},
+							{
+								"name": "Red Output",
+								"x": 0.88,
+								"y": 0.76
+							},
+							{
+								"name": "Yellow Input",
+								"x": 0.12,
+								"y": 0.28
+							},
+							{
+								"name": "Yellow Output",
+								"x": 0.88,
+								"y": 0.44
+							},
+							{
+								"name": "Magenta Input",
+								"x": 0.12,
+								"y": 0.44
+							},
+							{
+								"name": "Magenta Output",
+								"x": 0.88,
+								"y": 0.12
+							},
+							{
+								"name": "Cyan Input",
+								"x": 0.12,
+								"y": 0.6
+							},
+							{
+								"name": "Cyan Output",
+								"x": 0.88,
+								"y": 0.28
+							},
+							{
+								"name": "Black Input",
+								"x": 0.12,
+								"y": 0.76
+							},
+							{
+								"name": "Black Output",
+								"x": 0.88,
+								"y": 0.6
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1886466,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 239287088670557,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

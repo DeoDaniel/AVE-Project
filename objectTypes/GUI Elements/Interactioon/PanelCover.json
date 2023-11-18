@@ -1,0 +1,52 @@
+{
+	"name": "PanelCover",
+	"plugin-id": "Sprite",
+	"sid": 161475600378344,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "clicked",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 455108483298498
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 705026585586162
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.96,
+						"originY": 0.04,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 682315,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 260166150852583,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -221,9 +221,11 @@
 			"Table",
 			"TiledBackground",
 			"Handcanon",
-			"Tips",
 			"Splat",
-			"Video"
+			"Video",
+			"Sprite",
+			"Sprite2",
+			"Sprite4"
 		],
 		"subfolders": [
 			{
@@ -246,7 +248,8 @@
 					"Info2",
 					"GameOver",
 					"DialogueText",
-					"Info3"
+					"Info3",
+					"Tips"
 				],
 				"subfolders": [
 					{
@@ -268,6 +271,16 @@
 							}
 						],
 						"name": "HUD"
+					},
+					{
+						"items": [
+							"Panel",
+							"OutputArea",
+							"PanelCover",
+							"Wire"
+						],
+						"subfolders": [],
+						"name": "Interactioon"
 					}
 				],
 				"name": "GUI Elements"

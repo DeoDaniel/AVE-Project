@@ -42,6 +42,36 @@
 			"sid": 923716791941443
 		},
 		{
+			"eventType": "variable",
+			"name": "Connected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 863028428331790
+		},
+		{
+			"eventType": "variable",
+			"name": "InteractMode",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 650845434556142
+		},
+		{
+			"eventType": "variable",
+			"name": "Killed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 331016767592356
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -722,46 +752,102 @@
 									],
 									"actions": [
 										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Door3",
-											"sid": 905446949086476,
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 449075942807283,
 											"parameters": {
-												"instance-variable": "Open",
-												"value": "true"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 680758230038477,
-											"parameters": {
-												"audio-file": "scp-door-opening",
-												"loop": "not-looping",
-												"volume": "-10",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
-										},
-										{
-											"id": "tween-two-properties",
-											"objectClass": "Door3",
-											"sid": 743713789049871,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "position",
-												"end-x": "1915",
-												"end-y": "325",
-												"time": "1.5",
-												"ease": "easeinoutquad",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
+												"variable": "InteractMode"
 											}
 										}
 									],
 									"sid": 558179067431785
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 431707527073721,
+											"parameters": {
+												"variable": "InteractMode"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 637367170718931,
+											"parameters": {
+												"layer": "5",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 597451165830137,
+											"parameters": {
+												"layer": "5",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Player",
+											"sid": 339487407202342,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"state": "disabled"
+											}
+										}
+									],
+									"sid": 477547104069707
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 410913867620445,
+											"parameters": {
+												"variable": "InteractMode"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 142978503926456,
+											"parameters": {
+												"layer": "5",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 741516839288564,
+											"parameters": {
+												"layer": "5",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Player",
+											"sid": 576108921342758,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 669916464720523
 								},
 								{
 									"eventType": "block",
@@ -1039,6 +1125,14 @@
 													"parameters": {
 														"frame-number": "0"
 													}
+												},
+												{
+													"id": "set-cursor-style",
+													"objectClass": "Mouse",
+													"sid": 726252930901536,
+													"parameters": {
+														"cursor-style": "normal"
+													}
 												}
 											],
 											"sid": 744905245341334
@@ -1062,6 +1156,14 @@
 													"sid": 319466798631910,
 													"parameters": {
 														"frame-number": "1"
+													}
+												},
+												{
+													"id": "set-cursor-style",
+													"objectClass": "Mouse",
+													"sid": 249655415728062,
+													"parameters": {
+														"cursor-style": "crosshair"
 													}
 												}
 											],
@@ -1093,64 +1195,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "toggle-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 563677469469003,
-									"parameters": {
-										"variable": "MapMode"
-									}
-								},
-								{
-									"id": "set-layer-scroll",
-									"objectClass": "System",
-									"sid": 106745947919025,
-									"parameters": {
-										"layer": "2",
-										"scroll-x": "CurrentRoom.ImagePointX(1)",
-										"scroll-y": "CurrentRoom.ImagePointY(1)"
-									}
-								},
-								{
-									"id": "set-layer-scroll",
-									"objectClass": "System",
-									"sid": 491897716989880,
-									"parameters": {
-										"layer": "1",
-										"scroll-x": "CurrentRoom.ImagePointX(1)",
-										"scroll-y": "CurrentRoom.ImagePointY(1)"
-									}
-								},
-								{
-									"id": "set-layer-scroll",
-									"objectClass": "System",
-									"sid": 465643743083159,
-									"parameters": {
-										"layer": "0",
-										"scroll-x": "CurrentRoom.ImagePointX(1)",
-										"scroll-y": "CurrentRoom.ImagePointY(1)"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 567523744966498,
-									"parameters": {
-										"layer": "3",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 277029049687757,
-									"parameters": {
-										"layer": "4",
-										"visibility": "invisible"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 211618231017479,
 							"children": [
 								{
@@ -1159,168 +1204,243 @@
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 534892130724516,
+											"sid": 365147963383065,
 											"parameters": {
-												"variable": "MapMode"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-layer-scale",
-											"objectClass": "System",
-											"sid": 192511589549444,
-											"parameters": {
-												"layer": " 3",
-												"scale": "2.942"
-											}
-										},
-										{
-											"id": "set-layer-scale",
-											"objectClass": "System",
-											"sid": 400698055870144,
-											"parameters": {
-												"layer": "4",
-												"scale": "2.942"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "PlayerPosition",
-											"sid": 455174987750764,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "CurrentRoom",
-											"sid": 988835255645189,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "DialogueText",
-											"sid": 370133298668874,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Tips",
-											"sid": 258663414206961,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Player",
-											"sid": 239789132125541,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 602970344385880,
-											"parameters": {
-												"layer": "3",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 412260028822906,
-											"parameters": {
-												"layer": "4",
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 220006018912525
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 135288431163634,
-											"parameters": {
-												"variable": "MapMode"
+												"variable": "InteractMode"
 											},
 											"isInverted": true
 										}
 									],
 									"actions": [
 										{
-											"id": "set-layer-scale",
+											"id": "toggle-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 123633890946609,
+											"sid": 789625906009128,
 											"parameters": {
-												"layer": " 3",
-												"scale": "1"
+												"variable": "MapMode"
 											}
 										},
 										{
-											"id": "set-layer-scale",
+											"id": "set-layer-scroll",
 											"objectClass": "System",
-											"sid": 170546164400005,
+											"sid": 355262658292285,
+											"parameters": {
+												"layer": "2",
+												"scroll-x": "CurrentRoom.ImagePointX(1)",
+												"scroll-y": "CurrentRoom.ImagePointY(1)"
+											}
+										},
+										{
+											"id": "set-layer-scroll",
+											"objectClass": "System",
+											"sid": 423500447589773,
+											"parameters": {
+												"layer": "1",
+												"scroll-x": "CurrentRoom.ImagePointX(1)",
+												"scroll-y": "CurrentRoom.ImagePointY(1)"
+											}
+										},
+										{
+											"id": "set-layer-scroll",
+											"objectClass": "System",
+											"sid": 393694079525148,
+											"parameters": {
+												"layer": "0",
+												"scroll-x": "CurrentRoom.ImagePointX(1)",
+												"scroll-y": "CurrentRoom.ImagePointY(1)"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 566652238132288,
+											"parameters": {
+												"layer": "3",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 689149807321858,
 											"parameters": {
 												"layer": "4",
-												"scale": "1"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "PlayerPosition",
-											"sid": 897860738608904,
-											"parameters": {
 												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "CurrentRoom",
-											"sid": 725685416961864,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "DialogueText",
-											"sid": 845986015455457,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Tips",
-											"sid": 853904185291997,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Player",
-											"sid": 178466227122582,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"state": "enabled"
 											}
 										}
 									],
-									"sid": 488944476148597
+									"sid": 539228778632630,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 534892130724516,
+													"parameters": {
+														"variable": "MapMode"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-scale",
+													"objectClass": "System",
+													"sid": 869586290066085,
+													"parameters": {
+														"layer": " 3",
+														"scale": "2.942"
+													}
+												},
+												{
+													"id": "set-layer-scale",
+													"objectClass": "System",
+													"sid": 328709454812602,
+													"parameters": {
+														"layer": "4",
+														"scale": "2.942"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "PlayerPosition",
+													"sid": 561328022833232,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "CurrentRoom",
+													"sid": 165433664347916,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "DialogueText",
+													"sid": 576162799081273,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Tips",
+													"sid": 976050604013258,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Player",
+													"sid": 990489916318641,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 420367057639612,
+													"parameters": {
+														"layer": "3",
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 203494252241816,
+													"parameters": {
+														"layer": "4",
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 545235167940014
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 135288431163634,
+													"parameters": {
+														"variable": "MapMode"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-scale",
+													"objectClass": "System",
+													"sid": 134929318450719,
+													"parameters": {
+														"layer": " 3",
+														"scale": "1"
+													}
+												},
+												{
+													"id": "set-layer-scale",
+													"objectClass": "System",
+													"sid": 840733636669970,
+													"parameters": {
+														"layer": "4",
+														"scale": "1"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "PlayerPosition",
+													"sid": 685998030430482,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "CurrentRoom",
+													"sid": 541574592811759,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "DialogueText",
+													"sid": 449435535826427,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Tips",
+													"sid": 495157872586660,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Player",
+													"sid": 229718757056958,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"state": "enabled"
+													}
+												}
+											],
+											"sid": 120125083181304
+										}
+									]
 								}
 							],
 							"isOrBlock": true
@@ -2641,6 +2761,103 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 216107095857687,
+							"parameters": {
+								"variable": "Killed",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 763690485193405,
+							"parameters": {
+								"audio-file": "achievement-mp3-sound",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "CenterDoor3",
+							"sid": 814632060451243,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetX",
+								"end-value": "3296",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 968846092033755,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "CenterDoor2",
+							"sid": 258344473007558,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetX",
+								"end-value": "3306",
+								"time": "3.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 516542648066109,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "CenterDoor1",
+							"sid": 592001740511469,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetX",
+								"end-value": "3316",
+								"time": "2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 825681275484885
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 950686764755650
@@ -2706,6 +2923,15 @@
 										"variable": "MapMode"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 263948716647237,
+									"parameters": {
+										"variable": "InteractMode"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -2729,6 +2955,24 @@
 									"id": "has-gamepads",
 									"objectClass": "Gamepad",
 									"sid": 744700071653393
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 384905495868717,
+									"parameters": {
+										"variable": "MapMode"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 847266789513630,
+									"parameters": {
+										"variable": "InteractMode"
+									},
+									"isInverted": true
 								},
 								{
 									"id": "compare-axis",
@@ -3172,6 +3416,124 @@
 							"sid": 844209284753279
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 819030852859476,
+							"parameters": {
+								"variable": "Connected",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Door3",
+							"sid": 423560181333034,
+							"parameters": {
+								"instance-variable": "Open"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Panel",
+							"sid": 399281745799178,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 948183482025273,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 911603332485986,
+							"parameters": {
+								"variable": "InteractMode",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 644521919620359,
+							"parameters": {
+								"layer": "5",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 230580250705550,
+							"parameters": {
+								"layer": "5",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Player",
+							"sid": 856790051204878,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Door3",
+							"sid": 806836511352557,
+							"parameters": {
+								"instance-variable": "Open",
+								"value": "true"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 275482529277088,
+							"parameters": {
+								"audio-file": "scp-door-opening",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Door3",
+							"sid": 448839775769796,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "1915",
+								"end-y": "325",
+								"time": "1.5",
+								"ease": "easeinoutquad",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 695507788794699
 				}
 			],
 			"sid": 935560600410707
@@ -4732,6 +5094,519 @@
 				}
 			],
 			"sid": 242753208399417
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Interaction GUI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 212389189617984,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "PanelCover"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 247567406970865,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "PanelCover",
+									"sid": 506643977926367,
+									"parameters": {
+										"instance-variable": "clicked"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "PanelCover",
+									"sid": 287681408875670,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetAngle",
+										"end-value": "-45",
+										"time": "3",
+										"ease": "easeoutelastic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 655940911715843,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "PanelCover",
+									"sid": 111135592989165,
+									"parameters": {
+										"instance-variable": "clicked",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 662331750691634
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "PanelCover",
+									"sid": 886704792505133,
+									"parameters": {
+										"instance-variable": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "PanelCover",
+									"sid": 243730002752313,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetY",
+										"end-value": "1100",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 335237850979193
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 364038520429325,
+							"parameters": {
+								"object": "PanelCover"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 677716484963699,
+							"parameters": {
+								"object": "Wire"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 811346644511379,
+							"parameters": {
+								"cursor-style": "hand"
+							}
+						}
+					],
+					"sid": 258036233460661,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Wire",
+									"sid": 841617771435639,
+									"parameters": {
+										"instance-variable": "Linked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-style",
+									"objectClass": "Mouse",
+									"sid": 910059921518319,
+									"parameters": {
+										"cursor-style": "normal"
+									}
+								}
+							],
+							"sid": 808356680833509
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 925800245881766,
+							"parameters": {
+								"object": "PanelCover"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 451011887314124,
+							"parameters": {
+								"object": "Wire"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 970086282842295,
+							"parameters": {
+								"cursor-style": "normal"
+							}
+						}
+					],
+					"sid": 938867465784843
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 612585319223270,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 639202031381974,
+							"parameters": {
+								"object": "Wire"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Wire",
+							"sid": 988600541732201,
+							"parameters": {
+								"instance-variable": "HeldDown"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Wire",
+							"sid": 877183552197615,
+							"parameters": {
+								"instance-variable": "Linked"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Wire",
+							"sid": 895801920048577,
+							"parameters": {
+								"instance-variable": "HeldDown",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 636667199927554
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-released",
+							"objectClass": "Mouse",
+							"sid": 242428049545750,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Wire",
+							"sid": 515500125243785,
+							"parameters": {
+								"instance-variable": "HeldDown"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Wire",
+							"sid": 110453441834319,
+							"parameters": {
+								"instance-variable": "HeldDown",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 816263647582293,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 919338691646390,
+									"parameters": {
+										"object": "OutputArea"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Wire",
+									"sid": 911936128187382,
+									"parameters": {
+										"x": "Panel.ImagePointX(Wire.Input)",
+										"y": "Panel.ImagePointY(Wire.Input)"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "Wire",
+									"sid": 387504465339229,
+									"parameters": {
+										"width": "15"
+									}
+								}
+							],
+							"sid": 211073187442317
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 898221836665037,
+									"parameters": {
+										"object": "OutputArea"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Wire",
+									"sid": 707355373839004,
+									"parameters": {
+										"instance-variable": "Linked",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 784157874401281,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 452782590550419,
+											"parameters": {
+												"first-value": "round(distance(Panel.ImagePointX(Wire.Input), Panel.ImagePointY(Wire.Input),Panel.ImagePointX(Wire.Output) ,Panel.ImagePointY(Wire.Output)))",
+												"comparison": 5,
+												"second-value": "round(Wire.Width)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 447244768522903,
+											"parameters": {
+												"variable": "Connected",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "Lives",
+											"sid": 147946529935011,
+											"parameters": {
+												"text": "str(Connected)"
+											}
+										}
+									],
+									"sid": 367473285537718
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 804941624676779,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Wire",
+							"sid": 372538470205930,
+							"parameters": {
+								"instance-variable": "HeldDown"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 755666593403005,
+							"parameters": {
+								"object": "OutputArea"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Wire",
+							"sid": 665079236922376,
+							"parameters": {
+								"x": "OutputArea.X",
+								"y": "OutputArea.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Wire",
+							"sid": 674887521008918,
+							"parameters": {
+								"x": "(Panel.ImagePointX(Wire.Input)+OutputArea.X)/2",
+								"y": "(Panel.ImagePointY(Wire.Input)+OutputArea.Y)/2"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Wire",
+							"sid": 704727842742193,
+							"parameters": {
+								"width": "distance(Panel.ImagePointX(Wire.Input), Panel.ImagePointY(Wire.Input), OutputArea.X, OutputArea.Y)"
+							}
+						}
+					],
+					"sid": 891385788511816
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 328287372018310,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 660849681056928,
+							"parameters": {
+								"object": "OutputArea"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Wire",
+							"sid": 857966101822143,
+							"parameters": {
+								"instance-variable": "HeldDown"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 376226389087681,
+							"parameters": {
+								"cursor-style": "hand"
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Wire",
+							"sid": 428090916709781,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Wire",
+							"sid": 602149662100547,
+							"parameters": {
+								"x": "(Mouse.X+Panel.ImagePointX(Wire.Input))/2",
+								"y": "(Mouse.Y+Panel.ImagePointY(Wire.Input))/2"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Wire",
+							"sid": 776613163653943,
+							"parameters": {
+								"width": "distance(Panel.ImagePointX(Wire.Input), Panel.ImagePointY(Wire.Input), Mouse.X, Mouse.Y)"
+							}
+						}
+					],
+					"sid": 158886817997431
+				}
+			],
+			"sid": 824858608117938
 		}
 	],
 	"sid": 558909492298727
