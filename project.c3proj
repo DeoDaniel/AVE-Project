@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -22,8 +29,36 @@
 		},
 		{
 			"type": "plugin",
+			"id": "SpeechSynthesis",
+			"name": "Speech synthesis",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Timeline",
+			"name": "Timeline controller",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "progressbar",
+			"name": "Progress bar",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -36,8 +71,8 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Bullet",
-			"name": "Bullet",
+			"id": "Anchor",
+			"name": "Anchor",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -45,6 +80,13 @@
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -64,15 +106,22 @@
 		},
 		{
 			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -107,9 +156,19 @@
 			"bullet",
 			"Sprite",
 			"Interactable",
-			"PickArea",
-			"Sprite2",
-			"ShadowLight"
+			"Area",
+			"ShadowLight",
+			"SpriteFont",
+			"Wall",
+			"Door",
+			"Flashlight",
+			"TimelineController",
+			"Door2",
+			"Hotbar",
+			"SpeechSynthesis",
+			"Audio",
+			"GameOver",
+			"ProgressBar"
 		],
 		"subfolders": []
 	},
@@ -137,7 +196,48 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "pew-pew-lame-sound-effect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 378950154711875,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "flashlight-click.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 506447645147835,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "woosh-sound-effect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 949726620777800,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "emotional-damage-meme.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 349262146029235,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "achievement-mp3-sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 933304179750539,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
@@ -240,8 +340,8 @@
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,

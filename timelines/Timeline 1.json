@@ -3,10 +3,10 @@
 	"enabled": true,
 	"interpolationMode": "default",
 	"resultMode": "default",
-	"ease": "noease",
+	"ease": "default",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 1,
+	"playheadTime": 0,
 	"totalTime": 5,
 	"stepTime": 0.1,
 	"useStepTime": true,
@@ -21,7 +21,111 @@
 	"startOnLayout": "",
 	"transformWithSceneGraph": true,
 	"ignoreSystemTimescale": true,
-	"tracks": [],
+	"tracks": [
+		{
+			"type": "instance-track",
+			"worldInstance": 11,
+			"objectType": "SpriteFont",
+			"project": "jylnef8x06j",
+			"enabled": true,
+			"interpolationMode": "default",
+			"resultMode": "default",
+			"ease": "default",
+			"pathMode": "default",
+			"resizeMode": "default",
+			"initialVisibility": true,
+			"id": "",
+			"virtualPosition": {
+				"useColor": true,
+				"colorSet": false,
+				"relativeFlags": 2047
+			},
+			"keyframes": [
+				{
+					"time": 0,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				},
+				{
+					"time": 2.5,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				},
+				{
+					"time": 5,
+					"tags": "",
+					"enabled": true,
+					"ease": "default",
+					"pathMode": "default"
+				}
+			],
+			"propertyTracks": [
+				{
+					"property": "text",
+					"source": {
+						"type": "plugin",
+						"uid": "Spritefont2"
+					},
+					"enabled": true,
+					"interpolationMode": "step",
+					"resultMode": "default",
+					"ease": "default",
+					"pathMode": "none",
+					"propertyKeyframes": [
+						{
+							"time": 0,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "WASD to move\nShift to dash",
+							"rValue": "WASD to move\nShift to dash",
+							"aValue": "WASD to move\nShift to dash",
+							"addons": []
+						},
+						{
+							"time": 2.5,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "E to Interact\nF to use Flashlight",
+							"rValue": "E to Interact\nF to use Flashlight",
+							"aValue": "E to Interact\nF to use Flashlight",
+							"addons": []
+						},
+						{
+							"time": 5,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": "AVE Alpha v0.1",
+							"rValue": "AVE Alpha v0.1",
+							"aValue": "AVE Alpha v0.1",
+							"addons": []
+						}
+					]
+				}
+			],
+			"propertyTracksRoot": {
+				"enabled": true,
+				"interpolationMode": "default",
+				"resultMode": "default",
+				"ease": "default",
+				"pathMode": "default",
+				"resizeMode": "default",
+				"expanded": true,
+				"name": "Property Track Folder",
+				"items": [],
+				"subfolders": []
+			}
+		}
+	],
 	"tracksRoot": {
 		"enabled": true,
 		"interpolationMode": "default",

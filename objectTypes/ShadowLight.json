@@ -4,11 +4,12 @@
 	"sid": 188791515074236,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
-	"effectTypes": [
+	"behaviorTypes": [
 		{
-			"effectId": "softlight",
-			"name": "SoftLight"
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 513289619082867
 		}
-	]
+	],
+	"effectTypes": []
 }

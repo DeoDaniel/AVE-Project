@@ -1,26 +1,10 @@
 {
-	"name": "Interactable",
+	"name": "Hotbar",
 	"plugin-id": "Sprite",
-	"sid": 131787358510842,
-	"isGlobal": true,
+	"sid": 911553366914973,
+	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 599439094480265
-		},
-		{
-			"behaviorId": "shadowcaster",
-			"name": "ShadowCaster",
-			"sid": 276208138090722
-		},
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 802184450728325
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -34,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9298622,
+						"imageSpriteId": 6654,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 618943531804875,
+				"sid": 404589562991351,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
