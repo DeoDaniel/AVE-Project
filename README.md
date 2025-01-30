@@ -1,8 +1,8 @@
 # AVE PROJECT
 
 - Title			: Machiavellian (AVE)
-- Stakeholders 	: Daniel & Ryo
-- Style/Theme 	: 8-bit / 16-bit, _Dark, R18+ (Gore)_
+- Stakeholders 	: Daniel
+- Style/Theme 	: 8-bit / 16-bit, _Dark, R17+ (Gore)_
 
 _(Italics: to be decided)_
 
